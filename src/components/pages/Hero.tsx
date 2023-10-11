@@ -1,0 +1,166 @@
+'use client'
+import React from 'react'
+import { useCallback } from 'react';
+import { loadFull } from 'tsparticles';
+import Particles from 'react-tsparticles'
+const Hero = () => {
+
+
+    const particlesInit = useCallback(async (engine) => {
+        console.log(engine);
+        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+        // starting from v2 you can add only the features you need reducing the bundle size
+        await loadFull(engine);
+    }, []);
+
+    const particlesLoaded = useCallback(async (container) => {
+        await console.log(container);
+    }, []);
+    const particlesConfig = {
+        fullScreen: {
+            enable: true,
+            zIndex: 0
+        },
+        particles: {
+            number: {
+                value: 200,
+                limit: 300,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: "#000000"
+            },
+            shape: {
+                type: "circle",
+                stroke: {
+                    width: 0,
+                    color: "#ffffff"
+                },
+                polygon: {
+                    nb_sides: 2
+                },
+                image: {
+                    src: "images/github.svg",
+                    width: 50,
+                    height: 50
+                }
+            },
+            opacity: {
+                value: 0.5,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 0.5,
+                    opacity_min: 0.5,
+                    sync: false
+                }
+            },
+            size: {
+                value: 20,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 10,
+                    size_min: 10,
+                    sync: false
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 100,
+                color: "#ffffff",
+                opacity: 1,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 3,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onHover: {
+                    enable: true,
+                    mode: "bubble",
+                    parallax: {
+                        enable: false,
+                        force: 50,
+                        smooth: 10
+                    }
+                },
+                onClick: {
+                    enable: true,
+                    mode: "push"
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 500,
+                    lineLinked: {
+                        opacity: 1
+                    }
+                },
+                bubble: {
+                    distance: 100,
+                    size: 100,
+                    duration: 2,
+                    opacity: 1,
+                    speed: 2
+                },
+                repulse: {
+                    distance: 200
+                },
+                push: {
+                    particles_nb: 4
+                },
+                remove: {
+                    particles_nb: 2
+                }
+            }
+        },
+        backgroundMask: {
+            enable: true,
+            cover: {
+                value: {
+                    r: 0,
+                    g: 0,
+                    b: 0
+                }
+            }
+        },
+        retina_detect: true,
+        fps_limit: 60,
+        background: {
+            image: "linear-gradient(126deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)"
+        }
+    }
+    return (
+
+        <Particles
+            options={particlesConfig}
+            id='tsparticles'
+            particlesLoaded='particlesLoaded'
+            init={particlesInit}
+            loaded={particlesLoaded}
+        />
+
+    )
+}
+
+export default Hero
