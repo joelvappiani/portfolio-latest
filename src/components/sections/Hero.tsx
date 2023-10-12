@@ -10,7 +10,7 @@ const Hero = () => {
     const particlesConfig: RecursivePartial<IOptions> = {
         fullScreen: {
             enable: true,
-            zIndex: -1
+            zIndex: 1
         },
         particles: {
             number: {
@@ -141,10 +141,9 @@ const Hero = () => {
         }
     }
     return (
-        <div>
+        <div id='Home' className='w-screen h-screen'>
             <Particles options={particlesConfig} />
             <NavBar />
-
         </div>
 
     )
