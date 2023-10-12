@@ -1,0 +1,33 @@
+.loader {
+    width: 80%;
+    height: 4.8px;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    width: 40px;
+    border-radius: 4px;
+    height: 4.8px;
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: animFw 0.8s linear infinite;
+}
+
+@keyframes animFw {
+    0% {
+        margin-left: -100%
+    }
+
+
+    100% {
+        margin-left: 100%
+    }
+}

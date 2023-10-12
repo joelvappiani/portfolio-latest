@@ -1,26 +1,16 @@
 'use client'
 import React from 'react'
-import { useCallback } from 'react';
+import { motion } from 'framer-motion'
 import { loadFull } from 'tsparticles';
+import { IOptions, RecursivePartial, tsParticles } from 'tsparticles-engine';
 import Particles from 'react-tsparticles'
+import NavBar from '../elements/navigation/NavBar';
 const Hero = () => {
-
-
-    const particlesInit = useCallback(async (engine) => {
-        console.log(engine);
-        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        await loadFull(engine);
-    }, []);
-
-    const particlesLoaded = useCallback(async (container) => {
-        await console.log(container);
-    }, []);
-    const particlesConfig = {
+    loadFull(tsParticles)
+    const particlesConfig: RecursivePartial<IOptions> = {
         fullScreen: {
             enable: true,
-            zIndex: 0
+            zIndex: -1
         },
         particles: {
             number: {
@@ -151,14 +141,11 @@ const Hero = () => {
         }
     }
     return (
+        <div>
+            <Particles options={particlesConfig} />
+            <NavBar />
 
-        <Particles
-            options={particlesConfig}
-            id='tsparticles'
-            particlesLoaded='particlesLoaded'
-            init={particlesInit}
-            loaded={particlesLoaded}
-        />
+        </div>
 
     )
 }
