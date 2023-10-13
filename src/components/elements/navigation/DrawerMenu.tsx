@@ -48,7 +48,7 @@ const DrawerMenu = ({ isVisible, changeVisible }: DrawerProps) => {
                         whileHover={{ translateX: -10, transition: { duration: 0.2 } }}
                         whileTap={{ scale: 0.9 }}
                         key={i}
-                        className="opacity-0 translate-x-[10px] text-white font-bold font-poppins hover:cursor-pointer"
+                        className="opacity-0 translate-x-[10px] text-white font-bold font-poppins hover:cursor-pointer drop-shadow-md"
                         onClick={() => scrollIntoView(item)}>
                         {item}</motion.li>
                 ))}

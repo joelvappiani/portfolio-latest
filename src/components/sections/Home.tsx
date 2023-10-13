@@ -5,12 +5,12 @@ import { loadFull } from 'tsparticles';
 import { IOptions, RecursivePartial, tsParticles } from 'tsparticles-engine';
 import Particles from 'react-tsparticles'
 import NavBar from '../elements/navigation/NavBar';
-const Hero = () => {
+const Home = () => {
     loadFull(tsParticles)
     const particlesConfig: RecursivePartial<IOptions> = {
         fullScreen: {
             enable: true,
-            zIndex: 1
+            zIndex: 0
         },
         particles: {
             number: {
@@ -149,4 +149,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default Home

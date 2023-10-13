@@ -1,0 +1,6 @@
+@counter-style orange-dot {
+    system: 'fixed'
+        symbols: "●";
+    suffix: " ";
+
+}

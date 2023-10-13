@@ -1,4 +1,5 @@
 "use client"
+import style from '../../../styles/navbar.module.css'
 import React, { useState, useEffect } from 'react'
 import { motion, useAnimate, stagger } from 'framer-motion'
 import Title from '../Title'
@@ -30,30 +31,24 @@ const NavBar = () => {
         });
     }
     return (
-        <nav className='fixed z-20 top-0 left-0 right-0 flex justify-between items-center font-poppins font-bold text-xl py-10 px-10'>
+        <nav className='fixed z-40 top-0 left-0 w-screen flex justify-between items-center font-poppins font-bold text-xl py-10 px-10'>
 
-            <Title size={'sm'} delay={2.5} />
+            <Title size={'sm'} delay={2.4} />
             <ul ref={scope} className='hidden self-center md:flex md:gap-12 md:items-center'>
                 {items.map((item: string, i: number) => (
-                    <div className='flex '>
 
-                        {/*
-                        Need to fix the orange dot appearing
-                         <motion.span
-                            whileHover={{ opacity: 1, transition: { duration: 0.2 } }}
-                            className='text-orange-400 opacity-0'>●</motion.span> */}
-                        <motion.li
-                            whileHover={{ translateX: 15, transition: { duration: 0.2 } }}
-                            whileTap={{ scale: 0.9 }}
-                            key={i}
-                            className="text-white font-bold font-poppins opacity-0 hover:cursor-pointer"
-                            onClick={() => scrollIntoView(item)}
-                        >{item}</motion.li>
-                    </div>
+                    <motion.li
+                        whileHover={{ translateX: 15, listStyleType: 'disc', transition: { duration: 0.2 } }}
+                        whileTap={{ scale: 0.9 }}
+                        key={i}
+                        className="text-orange-400 font-bold font-poppins opacity-0 hover:cursor-pointer drop-shadow-md"
+                        onClick={() => scrollIntoView(item)}
+                    ><span className='text-white'>{item}</span></motion.li>
+
                 ))}
             </ul>
             <div className='absolute right-10 z-20'>
-                <div className=' md:hidden'>
+                <div className=' md:hidden drop-shadow-md'>
                     <Hamburger toggled={isOpen} toggle={setIsOpen} size={20} />
                 </div>
             </div>
