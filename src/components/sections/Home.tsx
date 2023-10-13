@@ -5,6 +5,10 @@ import { loadFull } from 'tsparticles';
 import { IOptions, RecursivePartial, tsParticles } from 'tsparticles-engine';
 import Particles from 'react-tsparticles'
 import NavBar from '../elements/navigation/NavBar';
+import Avatar from '../elements/banner/Avatar';
+import Introducing from '../elements/banner/Introducing';
+import CustomCursor from '../elements/CustomCursor'
+
 const Home = () => {
     loadFull(tsParticles)
     const particlesConfig: RecursivePartial<IOptions> = {
@@ -141,9 +145,17 @@ const Home = () => {
         }
     }
     return (
-        <div id='Home' className='w-screen h-screen'>
+        <div id='Home' className=' w-screen h-screen pointer-events-none opacity-1 flex'>
             <Particles options={particlesConfig} />
             <NavBar />
+            <div className='z-10 mt-20 w-screen h-screen flex flex-col md:flex-row-reverse justify-around items-center pointer-events-none' >
+                <div className='h-full flex justify-center items-center '>
+
+                    <Avatar />
+                </div>
+                <Introducing />
+            </div>
+            <CustomCursor />
         </div>
 
     )

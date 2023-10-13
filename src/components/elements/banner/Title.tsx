@@ -23,7 +23,7 @@ const Title = ({ size, delay }: TitleProps) => {
     }
     if (size === 'sm') {
         return (
-            <div className='w-[150px] flex justify-center hover:cursor-pointer' onClick={() => scrollIntoView()}>
+            <div className='w-[150px] flex justify-center hover:cursor-pointer pointer-event-auto' onClick={() => scrollIntoView()}>
                 <h1 className='flex justify-center items-center font-poppins font-[600] text-2xl drop-shadow-md'>
                     <div ref={scope} className=' w-5 h-[18px] border-white border-[4px] mx-[1px] rounded-r-[30px] drop-shadow-md' />JOVAP</h1>
             </div>

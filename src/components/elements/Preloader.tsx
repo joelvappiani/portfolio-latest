@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import style from '@/styles/loader.module.css'
 import { useAnimate } from 'framer-motion'
 
-import Title from './Title'
+import Title from './banner/Title'
 const Preloader = () => {
     const [scope, animate] = useAnimate()
     useEffect(() => {

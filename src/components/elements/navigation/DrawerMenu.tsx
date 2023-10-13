@@ -40,7 +40,7 @@ const DrawerMenu = ({ isVisible, changeVisible }: DrawerProps) => {
         <nav
             ref={scope}
             onClick={() => changeVisible(false)}
-            className='fixed top-0 left-0 bg-black bg-opacity-20 w-full h-full z-0'>
+            className='fixed top-0 left-0 bg-black bg-opacity-20 w-full h-full z-0 pointer-events-auto'>
             <ul
                 className={'absolute z-10 top-0 right-0 h-screen w-0 bg-black bg-opacity-50 backdrop-blur-md gap-10 flex flex-col justify-start items-end pr-10 pt-32 '}>
                 {items.map((item: string, i: number) => (

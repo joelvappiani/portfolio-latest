@@ -2,7 +2,7 @@
 import style from '../../../styles/navbar.module.css'
 import React, { useState, useEffect } from 'react'
 import { motion, useAnimate, stagger } from 'framer-motion'
-import Title from '../Title'
+import Title from '../banner/Title'
 import Hamburger from 'hamburger-react'
 import DrawerMenu from './DrawerMenu'
 
@@ -31,7 +31,7 @@ const NavBar = () => {
         });
     }
     return (
-        <nav className='fixed z-40 top-0 left-0 w-screen flex justify-between items-center font-poppins font-bold text-xl py-10 px-10'>
+        <nav className='fixed z-40 top-0 left-0 w-screen flex justify-between items-center font-poppins font-bold text-xl py-10 px-10 pointer-events-auto'>
 
             <Title size={'sm'} delay={2.4} />
             <ul ref={scope} className='hidden self-center md:flex md:gap-12 md:items-center'>
@@ -41,7 +41,7 @@ const NavBar = () => {
                         whileHover={{ translateX: 15, listStyleType: 'disc', transition: { duration: 0.2 } }}
                         whileTap={{ scale: 0.9 }}
                         key={i}
-                        className="text-orange-400 font-bold font-poppins opacity-0 hover:cursor-pointer drop-shadow-md"
+                        className="text-orange font-bold font-poppins opacity-0 hover:cursor-pointer drop-shadow-md"
                         onClick={() => scrollIntoView(item)}
                     ><span className='text-white'>{item}</span></motion.li>
 
