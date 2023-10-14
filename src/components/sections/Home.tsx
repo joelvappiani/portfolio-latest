@@ -148,11 +148,10 @@ const Home = () => {
         <div id='Home' className=' w-screen h-screen pointer-events-none opacity-1 flex'>
             <Particles options={particlesConfig} />
             <NavBar />
-            <div className='z-10 mt-20 w-screen h-screen flex flex-col md:flex-row-reverse justify-around items-center pointer-events-none' >
-                <div className='h-full flex justify-center items-center '>
+            <div className='z-10 mt-20 w-screen h-screen flex flex-col md:flex-row justify-around items-center pointer-events-none mx-10' >
 
-                    <Avatar />
-                </div>
+                <Avatar />
+
                 <Introducing />
             </div>
             <CustomCursor />

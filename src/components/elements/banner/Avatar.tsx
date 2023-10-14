@@ -15,7 +15,7 @@ const Avatar = () => {
     }
     return (
 
-        <div ref={scope} className='w-1/3 h-1/3 md:w-72 md:h-72 pointer-events-none opacity-0' >
+        <div ref={scope} className='mt-24 w-1/3 h-1/5 md:w-72 md:h-72 pointer-events-none opacity-0' >
             <Image src='/images/avatar/laptop-sitting.png' width={1000} height={1000} alt='3d avatar' />
         </div>
     )
