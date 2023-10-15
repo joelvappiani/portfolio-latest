@@ -24,16 +24,20 @@ const config: Config = {
       },
       backgroundImage: {
         'neumorphism-outer': 'linear-gradient(145deg, #f5f7fb, #ced0d4)',
-        'neumorphism-outer-orange': 'linear-gradient(145deg, #ffa740, #d98c36)',
+        'neumorphism-outer-darker': 'linear-gradient(145deg, #f5f7fb, #8b8b8b)',
+
+
       },
       backgroundColor: {
-        'neumorphism-white': '#ebebeb'
+        'neumorphism-white': '#ebebeb',
       },
       boxShadow: {
         'neumorphism-inner': "inset 5px 5px 7px #b8b8b8, inset -5px -5px 7px #ffffff",
-        'neumorphism-outer': '10px 10px 20px #c0c2c5,-10px -10px 20px #ffffff',
-        'neumorphism-button-orange': 'inset -5px -5px 6px #b76f2e,inset 5px 5px 6px #ffb54a',
-        'neumorphism-button-white': "inset -8px -8px 9px #bababa,inset 8px 8px 9px #ffffff"
+        'neumorphism-outer': '7px 7px 14px #cfd1d1,-7px -7px 14px #ffffff',
+        'neumorphism-button-orange': 'inset -5px -5px 6px #b76f2e,inset 5px 5px 6px #ffb54a, 7px 7px 14px #cfd1d1,-7px -7px 14px #ffffff',
+        'neumorphism-button-purple': 'inset -5px -5px 6px #7328b7,inset 5px 5px 6px #b33eff, 7px 7px 14px #b3b3b3,-7px -7px 14px #ffffff',
+        'neumorphism-button-white': "inset -8px -8px 9px #bababa,inset 8px 8px 9px #ffffff",
+        'neumorphism-image': "inset -7px -7px 14px #cfd1d1,inset 7px 7px 14px #ffffff, 7px 7px 14px #cfd1d1,-7px -7px 14px #ffffff"
       },
       borderRadius: {
         '4xl': "30px"

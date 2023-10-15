@@ -19,9 +19,6 @@ const About = () => {
                 className='text-purple font-bold flex justify-center md:justify-start text-4xl sm:text-6xl md:text-7xl uppercase drop-shadow-md w-full mt-28 md:mt-40 md:pl-40'
             >About Me</motion.h2>
             <div className='w-full h-11/12 flex'>
-                <div className='m-10 shadow-neumorphism-button-white bg-neumorphism-button-white w-1/2 h-full rounded-md'></div>
-                <div className='m-10 shadow-neumorphism-button-white bg-neumorphism-button-white w-1/2 h-full rounded-md'></div>
-
             </div>
 
         </motion.div>

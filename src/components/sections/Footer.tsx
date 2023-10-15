@@ -1,15 +1,21 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 const Footer = () => {
     return (
         <motion.div
             initial={{ display: 'none' }}
             animate={{ display: 'flex' }}
             transition={{ delay: 2.2 }}
-            className='z-10 h-36 w-full -pb-24 bg-black flex justify-center items-center font-poppins'
+            className='z-10 h-36 w-full bg-black flex flex-col justify-center items-center font-poppins '
         >
-            <span className='text-gray-600'> djovap.com</span>
+            <span className='text-gray-600 py-2'> djovap.com</span>
+            <div className='w-full flex justify-center gap-4 py-2'>
+                <a href=''><FontAwesomeIcon icon={faGithub} className='text-gray-600 text-2xl' /></a>
+                <a href=''><FontAwesomeIcon icon={faLinkedin} className='text-gray-600 text-2xl' /></a>
+            </div>
         </motion.div>
     )
 }
