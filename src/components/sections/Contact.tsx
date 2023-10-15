@@ -41,10 +41,10 @@ const Contact = () => {
             <ContactImage />
 
 
-            <div className='xl:-mt-72 lg:-mt-44 flex flex-col md:flex-row justify-center items-center h-[70%] w-screen lg:gap-24'>
+            <div className='lg:-mt-52 flex flex-col md:flex-row justify-center items-center h-[70%] w-screen lg:gap-24'>
                 <form
                     ref={scope}
-                    className=' lg:absolute lg:right-[10%] 2xl:right-[15%] flex flex-col items-center justify-center w-1/2 md:w-1/3 h-2/3 lg:h-2/5 gap-2 sm:gap-4 max-w-[600px]'
+                    className=' lg:absolute lg:right-[10%] 2xl:right-[15%] flex flex-col items-center justify-center w-1/2 md:w-1/3 h-2/3  gap-2 sm:gap-4 max-w-[600px]'
                     action=""
                 >
                     <span className='opacity-0 -translate-y-[10px] max-h-fit'>

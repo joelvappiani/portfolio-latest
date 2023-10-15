@@ -13,8 +13,8 @@ const Footer = () => {
         >
             <span className='text-gray-600 py-2'> djovap.com</span>
             <div className='w-full flex justify-center gap-4 py-2'>
-                <a href=''><FontAwesomeIcon icon={faGithub} className='text-gray-600 text-2xl' /></a>
-                <a href=''><FontAwesomeIcon icon={faLinkedin} className='text-gray-600 text-2xl' /></a>
+                <a href='https://github.com/joelvappiani'><FontAwesomeIcon icon={faGithub} className='text-gray-600 hover:text-white text-2xl' /></a>
+                <a href='https://linkedin.com/in/joël-vappiani-642840246'><FontAwesomeIcon icon={faLinkedin} className='text-gray-600 hover:text-white text-2xl' /></a>
             </div>
         </motion.div>
     )
