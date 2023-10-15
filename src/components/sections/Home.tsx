@@ -156,7 +156,7 @@ const Home = () => {
         }
     }
 
-    const logoList = ['github', 'javascript', 'mongodb', 'nodejs', 'tailwind', 'react', "nestjs", 'typescript']
+    const logoList = ['javascript', 'mongodb', 'expressjs', 'tailwind', 'react', "nestjs", 'nextjs', 'typescript']
     return (
         <div id='Home' className=' w-screen h-screen pointer-events-none opacity-1 flex overflow-hidden'>
             <Particles options={particlesConfig} />
