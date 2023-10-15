@@ -10,7 +10,7 @@ const Avatar = () => {
         avatarAnimation()
     }, [])
     async function avatarAnimation() {
-        await animate(scope?.current, { opacity: 1, y: -10 }, { delay: 4, duration: 0.8 })
+        await animate(scope?.current, { opacity: 1, y: -10 }, { delay: 3.5, duration: 0.6, ease: "easeInOut" })
         animate(scope?.current, { y: 0 }, { repeat: Infinity, repeatType: "mirror", duration: 1, ease: 'linear' })
     }
     return (
