@@ -1,6 +1,6 @@
 'use client'
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useEffect } from 'react'
+import { useAnimate, stagger } from 'framer-motion'
 import { loadFull } from 'tsparticles';
 import { IOptions, RecursivePartial, tsParticles } from 'tsparticles-engine';
 import Particles from 'react-tsparticles'
@@ -8,8 +8,19 @@ import NavBar from '../elements/navigation/NavBar';
 import Avatar from '../elements/banner/Avatar';
 import Introducing from '../elements/banner/Introducing';
 import CustomCursor from '../elements/CustomCursor'
+import FloatingLogo from '../elements/banner/FloatingLogo';
 
 const Home = () => {
+    const [scope, animate] = useAnimate()
+
+    useEffect(() => {
+        animateFloatingLogos()
+    }, [])
+
+    async function animateFloatingLogos() {
+        await new Promise(resolve => setTimeout(() => resolve('start floating logos animation'), 4000))
+        animate('li', { opacity: 1 }, { delay: stagger(0.7) })
+    }
     loadFull(tsParticles)
     const particlesConfig: RecursivePartial<IOptions> = {
         fullScreen: {
@@ -144,17 +155,23 @@ const Home = () => {
             image: "linear-gradient(126deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)"
         }
     }
+
+    const logoList = ['github', 'javascript', 'mongo-db', 'nodejs', 'tailwind', 'react', "nestjs", 'typescript']
     return (
-        <div id='Home' className=' w-screen h-screen pointer-events-none opacity-1 flex'>
+        <div id='Home' className=' w-screen h-screen pointer-events-none opacity-1 flex overflow-hidden'>
             <Particles options={particlesConfig} />
             <NavBar />
-            <div className='z-10 mt-20 w-screen h-screen flex flex-col md:flex-row justify-around items-center pointer-events-none mx-10' >
-
-                <Avatar />
-
-                <Introducing />
-            </div>
+            <Avatar />
+            <Introducing />
             <CustomCursor />
+            <ul
+                ref={scope}
+                className='absolute top-0 left-0 w-screen h-screen overflow-hidden'>
+
+                {logoList.map((src: string, i: number) => (
+                    <li className='opacity-0'><FloatingLogo src={src} /></li>
+                ))}
+            </ul>
         </div>
 
     )

@@ -6,19 +6,9 @@ const CustomCursor = () => {
     const cursorX = useMotionValue(-100)
     const cursorY = useMotionValue(-100)
 
-    // const springConfigBig = { damping: 8, stiffness: 100, mass: 0.5, };
-    // const cursorXSpringBig = useSpring(cursorX, springConfigBig);
-    // const cursorYSpringBig = useSpring(cursorY, springConfigBig);
-
-
-    // const springConfigSmall = { damping: 5, stiffness: 100, mass: 0.2 }
-    // const cursorXSpringSmall = useSpring(cursorX, springConfigSmall);
-    // const cursorYSpringSmall = useSpring(cursorY, springConfigSmall);
-
     const springConfigBig = { damping: 8, stiffness: 100, mass: 2, };
     const cursorXSpringBig = useSpring(cursorX, springConfigBig);
     const cursorYSpringBig = useSpring(cursorY, springConfigBig);
-
 
     const springConfigSmall = { damping: 6, stiffness: 100, mass: 1.4 }
     const cursorXSpringSmall = useSpring(cursorX, springConfigSmall);

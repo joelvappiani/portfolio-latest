@@ -10,12 +10,12 @@ const Avatar = () => {
         avatarAnimation()
     }, [])
     async function avatarAnimation() {
-        await animate(scope?.current, { opacity: 1, y: -10 }, { delay: 3, duration: 0.3 })
+        await animate(scope?.current, { opacity: 1, y: -10 }, { delay: 4, duration: 0.8 })
         animate(scope?.current, { y: 0 }, { repeat: Infinity, repeatType: "mirror", duration: 1, ease: 'linear' })
     }
     return (
 
-        <div ref={scope} className='mt-24 w-1/3 h-1/5 md:w-72 md:h-72 pointer-events-none opacity-0' >
+        <div ref={scope} className='absolute z-10 right-1/3 lg:right-[50vw] top-[30vh] sm:top-52 w-1/3 h-1/5 md:w-72 md:h-72 pointer-events-none opacity-0' >
             <Image src='/images/avatar/laptop-sitting.png' width={1000} height={1000} alt='3d avatar' />
         </div>
     )

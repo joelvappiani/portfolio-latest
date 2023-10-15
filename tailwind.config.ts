@@ -23,14 +23,17 @@ const config: Config = {
         poppins: ['var(--font-poppins)']
       },
       backgroundImage: {
-        'neumorphism-outer': 'linear-gradient(145deg, #f0f0f0, #cacaca)',
+        'neumorphism-outer': 'linear-gradient(145deg, #f5f7fb, #ced0d4)',
+        'neumorphism-outer-orange': 'linear-gradient(145deg, #ffa740, #d98c36)',
       },
       backgroundColor: {
-        'neumorphism-inner': '#e0e0e0',
+        'neumorphism-white': '#ebebeb'
       },
       boxShadow: {
         'neumorphism-inner': "inset 5px 5px 7px #b8b8b8, inset -5px -5px 7px #ffffff",
-        'neumorphism-outer': '5px 5px 30px #dedede,-5px -5px 30px #e2e2e2'
+        'neumorphism-outer': '10px 10px 20px #c0c2c5,-10px -10px 20px #ffffff',
+        'neumorphism-button-orange': 'inset -5px -5px 6px #b76f2e,inset 5px 5px 6px #ffb54a',
+        'neumorphism-button-white': "inset -8px -8px 9px #bababa,inset 8px 8px 9px #ffffff"
       },
       borderRadius: {
         '4xl': "30px"

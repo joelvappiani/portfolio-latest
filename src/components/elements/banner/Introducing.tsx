@@ -3,19 +3,19 @@ import React from 'react'
 import { motion } from 'framer-motion'
 const Introducing = () => {
     return (
-        <div className='flex md:w-2/3 md:h-full flex-col justify-end items-center md:items-end pb-32 font-poppins  m-0'>
+        <div className='absolute bottom-5 right-5 md:right-10 md:bottom-10 lg:bottom-20 lg:right-20 flex flex-col w-full items-end justify-center font-poppins'>
 
             <motion.h2
                 initial={{ opacity: 0, x: 80 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: .7, delay: .3 }}
-                className='text-orange font-bold flex text-end text-5xl sm:text-7xl md:text-8xl justify-end uppercase drop-shadow-md w-full pr-0 mr-0'
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: .7, delay: 3.3 }}
+                className='text-orange font-bold text-end text-4xl sm:text-7xl md:text-8xl  uppercase drop-shadow-md w-full pr-0 mr-0 z-10'
             >Joel Vappiani</motion.h2>
             <motion.span
                 initial={{ opacity: 0, x: 80 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: .7, delay: .5 }}
-                className='font-bold uppercase text-xl sm:text-2xl md:text-3xl lg:text-4xl '
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: .7, delay: 3.5 }}
+                className='font-bold uppercase text-lg sm:text-2xl md:text-3xl lg:text-4xl text-end z-10'
             >Developer Fullstack JS</motion.span>
         </div >
     )

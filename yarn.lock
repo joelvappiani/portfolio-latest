@@ -1972,6 +1972,11 @@ react-dom@^18:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-hooks-get-dimensions@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-hooks-get-dimensions/-/react-hooks-get-dimensions-1.1.0.tgz#65baf46fefdcfa57d47f33f872f7a9caf19da637"
+  integrity sha512-eiP42mwrswTfLsr13PAySDEMKU/t0B0pbgHm0KXeVzF2cN6IMMNJdH/d8atvFOxcERM+rBjAqWCqAVsSKFH6pQ==
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
