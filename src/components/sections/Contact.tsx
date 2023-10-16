@@ -33,7 +33,7 @@ const Contact = () => {
                 initial={{ opacity: 0, x: -80 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: .6, delay: .1 }}
-                className='text-transparent bg-clip-text bg-gradient-to-r from-purple to-pink font-bold flex justify-center md:justify-start text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase drop-shadow-md w-full mt-28 md:mt-40 md:pl-40'
+                className='text-transparent bg-clip-text bg-gradient-to-r from-purple to-pink font-bold flex justify-center md:justify-start text-3xl sm:text-6xl md:text-7xl lg:text-8xl uppercase drop-shadow-md w-full mt-28 md:mt-40 md:pl-40'
             >Contact Me</motion.h2>
 
 
