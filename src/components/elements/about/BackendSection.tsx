@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import { motion } from 'framer-motion'
 import TechLogo from './TechLogo'
 const BackendSection = () => {
     const logoList = ['javascript', 'nodejs', 'expressjs', 'mongodb', 'typescript', 'nestjs', 'socket.io', 'passportjs', 'jwt', 'github', 'docker']

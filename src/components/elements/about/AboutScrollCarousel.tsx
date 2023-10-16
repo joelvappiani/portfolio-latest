@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { motion, useTransform, useScroll } from 'framer-motion'
-import Resume from '@/components/sections/Resume';
+import Resume from './Resume';
 import TechStack from '@/components/sections/TechStack';
 
 const HorizontalScrollCarousel = () => {

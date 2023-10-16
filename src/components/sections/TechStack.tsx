@@ -11,8 +11,8 @@ const TechStack = () => {
 
             <div className='w-full h-full flex justify-center items-start gap-4 md:gap-8'>
 
-                <FrontendSection />
-                <BackendSection />
+                {/* <FrontendSection />
+                <BackendSection /> */}
             </div>
         </div>
     )
