@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { motion, useTransform, useScroll } from 'framer-motion'
-import Resume from './Resume';
+import PhotoSection from './PhotoSection';
 import TechStack from '@/components/sections/TechStack';
 
 const HorizontalScrollCarousel = () => {
@@ -9,13 +9,13 @@ const HorizontalScrollCarousel = () => {
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-51.5%"]);
+    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95.5%"]);
 
     return (
         <section ref={targetRef} className="relative h-[300vh]">
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <motion.div style={{ x }} className="flex gap-[10vw] lg:gap-[10vw] ml-[3vw]">
-                    <Resume />
+                <motion.div style={{ x }} className="flex gap-[5vw]  ml-[3vw]">
+                    <PhotoSection />
                     <TechStack />
                 </motion.div>
             </div>
