@@ -1,14 +1,15 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { useAnimate, stagger } from 'framer-motion'
 import { loadFull } from 'tsparticles';
-import { IOptions, RecursivePartial, tsParticles } from 'tsparticles-engine';
+import { Engine, IOptions, RecursivePartial, tsParticles, Container } from 'tsparticles-engine';
 import Particles from 'react-tsparticles'
 import NavBar from '../elements/navigation/NavBar';
 import Avatar from '../elements/banner/Avatar';
 import Introducing from '../elements/banner/Introducing';
 import CustomCursor from '../elements/CustomCursor'
 import FloatingLogo from '../elements/banner/FloatingLogo';
+
 
 const Home = () => {
     const [scope, animate] = useAnimate()
@@ -21,7 +22,17 @@ const Home = () => {
         await new Promise(resolve => setTimeout(() => resolve('start floating logos animation'), 4000))
         animate('li', { opacity: 1 }, { delay: stagger(0.7) })
     }
-    loadFull(tsParticles)
+
+    const particlesInit = useCallback(async (engine: Engine) => {
+        console.log(engine);
+        await loadFull(engine);
+    }, []);
+
+    const particlesLoaded = useCallback(async (container: Container | undefined) => {
+        await console.log(container);
+    }, []);
+
+    // loadFull(tsParticles)
     const particlesConfig: RecursivePartial<IOptions> = {
         fullScreen: {
             enable: true,
@@ -159,7 +170,7 @@ const Home = () => {
     const logoList = ['javascript', 'mongodb', 'expressjs', 'tailwind', 'react', "nestjs", 'nextjs', 'typescript']
     return (
         <div id='Home' className=' w-screen h-screen pointer-events-none opacity-1 flex overflow-hidden'>
-            <Particles options={particlesConfig} />
+            <Particles options={particlesConfig} init={particlesInit} loaded={particlesLoaded} />
             <NavBar />
             <Avatar />
             <Introducing />
