@@ -12,7 +12,7 @@ const AnimatedPicture = () => {
                     <h2 className='-ml-44 text-4xl font-thin drop-shadow-2xl ' >Freelance developer</h2>
                 </div>
                 <div className='inner-element h-full w-full flex justify-center items-between p-4 text-white' style={{ perspective: 500, transform: 'translateZ(70px)' }} >
-                    <h2 className='-mr-44 text-4xl font-thin text-black drop-shadow-2xl z-30' style={{ transform: 'translateZ(70px)' }}>Bootcamp Teacher</h2>
+                    <h2 className='-mr-44 -mt-10 text-4xl font-thin text-black drop-shadow-2xl z-30' style={{ transform: 'translateZ(70px)' }}>Bootcamp Teacher</h2>
                 </div>
             </div>
 
