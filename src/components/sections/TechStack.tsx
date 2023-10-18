@@ -7,7 +7,7 @@ const TechStack = () => {
     const [scope, animate] = useAnimate()
     const isInView = useInView(scope)
     useEffect(() => {
-        isInView && animate('.tech-logo', { scale: [0, 0.2, 1], y: [0, -50, 0], rotate: [0, -360, 0] }, { delay: stagger(.05), duration: .6 })
+        isInView && animate('.tech-logo', { scale: [0, 0.2, 1], y: [0, -100, 0], rotate: [0, -360, 0] }, { delay: stagger(.05), duration: .8 })
     }, [isInView])
     return (
         <div className=' w-[200vw] md:w-[95vw] xl:w-[80vw] h-[90vh] text-black rounded-lg bg-neumorphism-white shadow-neumorphism-image'>
