@@ -1,3 +1,4 @@
 export type LogoProps = {
-    src: string;
+    src: string[];
+
 }
