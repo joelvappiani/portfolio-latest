@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import { motion, useSpring, useMotionValue } from 'framer-motion'
 import Image from 'next/image'
-import { LogoProps } from '@/types/Logo'
-const FloatingLogo = ({ src }: LogoProps) => {
+import { BannerLogoProps } from '@/types/Logo'
+const FloatingLogo = ({ src }: BannerLogoProps) => {
 
     const dimentions = { width: "1000px", height: "1000px" }
     const { width, height } = dimentions

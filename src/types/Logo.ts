@@ -1,4 +1,8 @@
-export type LogoProps = {
+export type BannerLogoProps = {
+    src: string;
+
+}
+export type TechLogoProps = {
     src: string[];
 
 }
