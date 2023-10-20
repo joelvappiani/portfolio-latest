@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, MouseEvent } from 'react'
-import { useAnimate, useMotionValue } from 'framer-motion'
+import { useAnimate } from 'framer-motion'
 import Image from 'next/image'
 import { TechLogoProps } from '@/types/Logo'
 import Tilt from 'react-parallax-tilt'

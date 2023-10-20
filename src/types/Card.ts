@@ -1,4 +1,7 @@
-import { MotionValue } from "framer-motion";
-export type CardProps = {
-    name: string;
+export type TCard = {
+    name: string,
+    src: string,
+    desc: string,
+    type: string,
+    platform: string
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import PokemonCard from '../PokemonCard'
 import AnimatedPicture from '../AnimatedPicture'
 
 const PhotoSection = () => {

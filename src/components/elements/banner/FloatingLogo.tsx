@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { motion, useSpring, useMotionValue } from 'framer-motion'
 import Image from 'next/image'
 import { BannerLogoProps } from '@/types/Logo'
@@ -40,11 +40,6 @@ const FloatingLogo = ({ src }: BannerLogoProps) => {
                 pointerEvents: 'none',
             }}
 
-        // transition={{
-        //     ease: "linear",
-        //     duration: 2,
-        //     repeat: Infinity
-        // }}
         >
             <Image src={`/images/icons/icon-3d-${src}.png`} width={100} height={50} className="w-6 sm:w-8" alt='floating tech logo' />
         </motion.div>

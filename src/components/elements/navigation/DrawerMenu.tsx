@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import { motion, useAnimate, stagger } from 'framer-motion'
 import { DrawerProps } from '@/types/Drawer'
-import Link from 'next/link'
+
 
 const DrawerMenu = ({ isVisible, changeVisible }: DrawerProps) => {
     const items = ["Home", "About", "Projects", "Contact"]

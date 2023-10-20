@@ -314,7 +314,7 @@ const Home = () => {
                 className='absolute top-0 left-0 w-screen h-screen overflow-hidden'>
 
                 {logoList.map((src: string, i: number) => (
-                    <li className='opacity-0'><FloatingLogo src={src} /></li>
+                    <li key={i} className='opacity-0'><FloatingLogo src={src} /></li>
                 ))}
             </ul>
         </div>
