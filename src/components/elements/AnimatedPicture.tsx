@@ -1,9 +1,9 @@
 import React from 'react'
 import Tilt from 'react-parallax-tilt'
-import Image from 'next/image'
+
 const AnimatedPicture = () => {
     return (
-        <Tilt glareBorderRadius='20px' glareEnable glareColor='#fff' perspective={1000} scale={1.2} className='z-0' gyroscope={true} style={{ transformStyle: 'preserve-3d' }}>
+        <Tilt glareBorderRadius='20px' glareEnable glareColor='#fff' perspective={1000} scale={1.2} gyroscope={true} style={{ transformStyle: 'preserve-3d' }}>
 
 
 

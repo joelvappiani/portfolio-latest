@@ -15,16 +15,16 @@ const ProjectsScrollCarousel = () => {
 
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
-    const cards = [1, 2, 3, 4, 5, 6]
+    const cards = ['procap.com', 'ncicoiffure.com', "example", "example"]
     return (
         <section ref={targetRef} className="relative h-[200vh]">
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <motion.div style={{ x }} className="flex gap-32 ml-[50vw]">
-                    {cards.map((card) => {
+                <motion.div style={{ x }} className="flex gap-56 ml-[40vw]">
+                    {cards.map((card: string, i: number) => {
                         return (
 
 
-                            <Card key={card} />
+                            <Card key={i} name={card} />
 
                         )
                     })}
