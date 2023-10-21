@@ -4,5 +4,6 @@ export type BannerLogoProps = {
 }
 export type TechLogoProps = {
     src: string[];
+    from: string
 
 }

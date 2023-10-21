@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAnimate, useInView, stagger } from 'framer-motion'
-import TechLogo from './TechLogo'
+import TechLogo from '../TechLogo'
 
 const TechStack = () => {
     const [scope, animate] = useAnimate()
@@ -33,7 +33,7 @@ const TechStack = () => {
                     <div className='flex flex-wrap justify-center items-center gap-x-6 gap-y-4'>
                         {logoListFrontend.map((src: string[], i: number) => (
                             <div key={i} style={logoHovered === src[0] ? { zIndex: 50 } : { zIndex: 10 }} onMouseOver={() => setLogoHovered(src[0])}>
-                                <TechLogo src={src} />
+                                <TechLogo src={src} from='techstack' />
                             </div>
                         ))}
                     </div>
@@ -43,7 +43,7 @@ const TechStack = () => {
                     <div className=' flex flex-wrap justify-center items-center gap-x-6 gap-y-4'>
                         {logoListBackend.map((src: string[], i: number) => (
                             <div key={i} style={logoHovered === src[0] ? { zIndex: 50 } : { zIndex: 10 }} onMouseOver={() => setLogoHovered(src[0])}>
-                                <TechLogo src={src} />
+                                <TechLogo src={src} from='techstack' />
                             </div>
                         ))}
                     </div>

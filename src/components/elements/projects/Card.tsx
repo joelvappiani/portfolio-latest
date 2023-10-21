@@ -1,19 +1,24 @@
 import React, { useRef, useState, useEffect, JSX } from 'react'
 import { useWindowSize } from 'usehooks-ts';
-import { motion, useMotionValue, useTransform, useInView } from 'framer-motion';
-import { TCard } from '@/types/Card';
+import { motion, useMotionValue, useAnimate, useInView } from 'framer-motion';
+import { CardProps } from '@/types/Card';
 import Tilt from 'react-parallax-tilt'
 import Image from 'next/image';
 
-const Card = ({ name, src, desc, type, platform }: TCard): JSX.Element => {
+const Card = ({ name, src, desc, type, platform }: CardProps): JSX.Element => {
     const [isCloseToCenter, setIsCloseToCenter] = useState<boolean>(false)
+    const [hovered, setHovered] = useState<boolean>(false)
     const { width } = useWindowSize()
     const windowCenterX = width / 2
     const cardRef = useRef<HTMLDivElement | null>(null)
+    const [scope, animate] = useAnimate()
     const isInView = useInView(cardRef)
     const scale = useMotionValue(1)
 
     useEffect(() => {
+
+        hovered ? animate(scope.current, { scale: 1.00 }) : animate(scope.current, { scale: 1.2 })
+
         //get the position of the center of the div marked by the ref and set the distance from center of page to a state
         function moveCursor() {
             if (cardRef.current) {
@@ -28,7 +33,7 @@ const Card = ({ name, src, desc, type, platform }: TCard): JSX.Element => {
         return () => {
             window.removeEventListener('scroll', moveCursor)
         }
-    }, [isInView])
+    }, [isInView, hovered])
 
     return (
         <Tilt perspective={5000} gyroscope={true} style={{ transformStyle: 'preserve-3d', pointerEvents: 'auto' }}>
@@ -36,10 +41,16 @@ const Card = ({ name, src, desc, type, platform }: TCard): JSX.Element => {
                 ref={cardRef}
                 style={{ scale, transformStyle: 'preserve-3d', }}
                 transition={{ duration: .2 }}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
                 className='w-[10em] h-[10em] md:w-[20em] md:h-[20em]  rounded-2xl '>
                 <div className="rounded-2xl flex flex-col items-start justify-end  w-full h-full" style={{ transformStyle: 'preserve-3d' }} >
-                    <div className='w-[10em] h-[8em] md:w-[20em] md:h-[16em] absolute bottom-10 overflow-hidden'>
-                        <Image src={src} width={3000} height={3000} alt='project image' />
+                    <div
+                        className='w-[10em] h-[8em] md:w-[20em] md:h-[16em] absolute bottom-10 overflow-hidden'
+
+                    >
+
+                        <Image ref={scope} src={src} width={3000} height={3000} style={{ position: 'relative', top: 0 }} alt='project image' />
 
                     </div>
                     <motion.div
