@@ -1,14 +1,22 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, useAnimate, useInView, stagger } from 'framer-motion'
 import NeuInput from '../elements/contact/NeuInput'
 import NeuButton from '../elements/contact/NeuButton';
 import ContactImage from '../elements/contact/ContactImage';
-import TechLogo from '../elements/TechLogo'
+import { Form } from '@/types/Inputs';
 
 
 
 const Contact = () => {
+    const [formValue, setFormValue] = useState<Form>({
+        name: '',
+        email: '',
+        message: ''
+    })
+
+    const [submitted, setSubmitted] = useState<boolean>(false)
+    const [sent, setSent] = useState<boolean>(false)
     const [scope, animate] = useAnimate()
     const isInView = useInView(scope)
 
@@ -18,10 +26,32 @@ const Contact = () => {
         }
     }, [isInView])
 
-    console.log(isInView)
+
     function handleInputValue(id: string, value: string) {
-        console.log(id, value)
+        setFormValue({ ...formValue, [id]: value })
     }
+
+    //Manages the validation and handle the message send if all good
+    async function handleSend() {
+        setSubmitted(true)
+        if (Object.values(formValue).every((value: string) => value.length)) {
+            setSent(true)
+            const serverResponse = await fetch('http://localhost:3000/api/mail', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formValue)
+            })
+            const response = await serverResponse.json()
+            console.log(response)
+            setFormValue({ name: '', email: '', message: '' })
+        }
+        await new Promise(resolve => setTimeout(resolve, 500))
+        setSubmitted(false)
+        setSent(false)
+    }
+
+
+
 
     return (
 
@@ -54,20 +84,23 @@ const Contact = () => {
                     className=' lg:absolute lg:right-[10%] 2xl:right-[15%] flex flex-col items-center justify-center w-1/2 md:w-1/3 h-2/3  gap-2 sm:gap-4 max-w-[600px]'
                     action=""
                 >
-                    <span className='form opacity-0 -translate-y-[10px] max-h-fit'>
-                        <NeuInput id='name' type='classic' placeholder='😁 name' handleInputValue={handleInputValue} />
-                    </span>
-                    <span className=' form opacity-0 -translate-y-[10px] max-h-fit'>
+                    {Object.keys(formValue).map((input: string, i: number) => (
 
-                        <NeuInput id='email' type='classic' placeholder='✉️ email' handleInputValue={handleInputValue} />
+                        <span className='form opacity-0 -translate-y-[10px] max-h-fit'>
+                            <NeuInput id={input} type={input === 'message' ? 'textfield' : 'classic'} placeholder={input} handleInputValue={handleInputValue} submitted={submitted} inputValue={formValue[input as keyof Form]} sent={sent} />
+                        </span>
+                    ))}
+                    {/* <span className=' form opacity-0 -translate-y-[10px] max-h-fit'>
+
+                        <NeuInput id='email' type='classic' placeholder='✉️ email' handleInputValue={handleInputValue} validationError=''/>
                     </span>
                     <span className='form opacity-0 -translate-y-[10px] max-h-fit'>
 
-                        <NeuInput id='textfield' type='textfield' placeholder='🖊️ message' handleInputValue={handleInputValue} />
-                    </span>
+                        <NeuInput id='message' type='textfield' placeholder='🖊️ message' handleInputValue={handleInputValue} validationError=''/>
+                    </span> */}
                     <span className='form opacity-0 -translate-y-[10px] max-h-fit'>
 
-                        <NeuButton />
+                        <NeuButton handleSend={handleSend} />
                     </span>
 
                 </form>
