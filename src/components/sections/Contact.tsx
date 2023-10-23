@@ -8,6 +8,7 @@ import { Form } from '@/types/Inputs';
 
 
 
+
 const Contact = () => {
     const [formValue, setFormValue] = useState<Form>({
         name: '',
@@ -16,6 +17,7 @@ const Contact = () => {
     })
 
     const [submitted, setSubmitted] = useState<boolean>(false)
+    const [message, setMessage] = useState<string | null>(null)
     const [sent, setSent] = useState<boolean>(false)
     const [scope, animate] = useAnimate()
     const isInView = useInView(scope)
@@ -25,7 +27,10 @@ const Contact = () => {
             animate('.form', { y: -20, opacity: 1 }, { delay: stagger(0.3) })
         }
     }, [isInView])
-
+    useEffect(() => {
+        message?.includes('❌') && animate('.message', { color: 'red', opacity: 1 }, { duration: .3 })
+        message?.includes('✅') && animate('.message', { color: 'green', opacity: 1 }, { duration: .3 })
+    }, [message])
 
     function handleInputValue(id: string, value: string) {
         setFormValue({ ...formValue, [id]: value })
@@ -35,19 +40,30 @@ const Contact = () => {
     async function handleSend() {
         setSubmitted(true)
         if (Object.values(formValue).every((value: string) => value.length)) {
-            setSent(true)
+
             const serverResponse = await fetch('http://localhost:3000/api/mail', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formValue)
             })
             const response = await serverResponse.json()
-            console.log(response)
-            setFormValue({ name: '', email: '', message: '' })
+            if (response.result) {
+                setSent(true)
+                setSubmitted(false)
+                setFormValue({ name: '', email: '', message: '' })
+                setMessage('Message sent ! ✅')
+
+            } else {
+                setSent(true)
+                setSubmitted(false)
+                setMessage('❌ Something went wrong, please try again...')
+            }
+            await new Promise(resolve => setTimeout(resolve, 2000))
+            setSent(false)
+            setMessage('')
         }
-        await new Promise(resolve => setTimeout(resolve, 500))
-        setSubmitted(false)
-        setSent(false)
+        // await new Promise(resolve => setTimeout(resolve, 500))
+
     }
 
 
@@ -100,8 +116,10 @@ const Contact = () => {
                     </span> */}
                     <span className='form opacity-0 -translate-y-[10px] max-h-fit'>
 
-                        <NeuButton handleSend={handleSend} />
+                        <NeuButton handleSend={handleSend} submitted={submitted} sent={sent} />
                     </span>
+                    <span className='message text-xs text-center opacity-0'>{message}</span>
+
 
                 </form>
             </div>

@@ -21,6 +21,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hooks-get-dimensions": "^1.1.0",
+    "react-loader-spinner": "^5.4.5",
     "react-parallax-tilt": "^1.7.171",
     "react-tsparticles": "^2.12.2",
     "tsparticles": "^2.12.0",

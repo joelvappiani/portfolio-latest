@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     }
 
     await transporter.sendMail(mailData)
-    return Response.json({ message: 'Message sent' })
+    return Response.json({ result: true, message: 'Message sent' })
   } catch (error) {
     return Response.json({ result: false, message: 'Something went wrong' })
   }

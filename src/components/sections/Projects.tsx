@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-import HorizontalScrollCarousel from '../elements/projects/ProjectsScrollCarousel'
+import ProjectsScrollCarousel from '../elements/projects/ProjectsScrollCarousel'
 
 const Projects = () => {
 
@@ -19,7 +19,7 @@ const Projects = () => {
                 transition={{ duration: .6, delay: .1 }}
                 className='text-orange font-bold flex justify-center md:justify-start text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase drop-shadow-md w-full mt-28 md:mt-40 md:pl-40'
             >My Projects</motion.h2>
-            <HorizontalScrollCarousel />
+            <ProjectsScrollCarousel />
         </motion.div>
     )
 }

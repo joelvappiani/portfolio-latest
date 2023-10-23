@@ -15,4 +15,6 @@ export type Form = {
 
 export type Button = {
     handleSend: () => void
+    submitted: boolean;
+    sent: boolean;
 }
