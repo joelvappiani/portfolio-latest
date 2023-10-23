@@ -33,7 +33,7 @@ const TechStack = () => {
                     <div className='flex flex-wrap justify-center items-center gap-x-6 gap-y-4'>
                         {logoListFrontend.map((src: string[], i: number) => (
                             <div key={i} style={logoHovered === src[0] ? { zIndex: 50 } : { zIndex: 10 }} onMouseOver={() => setLogoHovered(src[0])}>
-                                <TechLogo src={src} from='techstack' />
+                                <TechLogo src={src} from='techstack' size={10} />
                             </div>
                         ))}
                     </div>
@@ -43,7 +43,7 @@ const TechStack = () => {
                     <div className=' flex flex-wrap justify-center items-center gap-x-6 gap-y-4'>
                         {logoListBackend.map((src: string[], i: number) => (
                             <div key={i} style={logoHovered === src[0] ? { zIndex: 50 } : { zIndex: 10 }} onMouseOver={() => setLogoHovered(src[0])}>
-                                <TechLogo src={src} from='techstack' />
+                                <TechLogo src={src} from='techstack' size={10} />
                             </div>
                         ))}
                     </div>

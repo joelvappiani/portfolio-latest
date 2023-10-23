@@ -62,14 +62,14 @@ const Card = ({ name, src, desc, type, platform }: CardProps): JSX.Element => {
                     >
                         <div className='flex justify-between mb-2'>
 
-                            <span className='text-white text-sm ' style={{ transform: "translateZ(150px)" }}>{name}</span>
-                            <div className='flex justify-center gap-2'>
+                            <span className='text-white text-xs sm:text-sm text-center sm:text-start w-full' style={{ transform: "translateZ(150px)" }}>{name}</span>
+                            <div className='hidden sm:flex justify-center gap-2'>
 
                                 <div className='text-[7px] text-white outline outline-1 outline-white rounded-full  p-0 px-1  flex justify-center items-center'><span>{platform}</span></div>
                                 <div className='text-[7px] text-gray-800 rounded-full  p-0 px-1 bg-white flex justify-center items-center'><span>{type}</span></div>
                             </div>
                         </div>
-                        <span className='text-gray-400 text-xs'>{desc}</span>
+                        <span className='hidden sm:flex text-gray-400 text-xs'>{desc}</span>
 
                     </motion.div>
                 </div>

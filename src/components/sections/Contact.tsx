@@ -39,7 +39,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: .6, delay: .1 }}
                     className='text-transparent bg-clip-text bg-gradient-to-r from-purple to-pink font-bold flex justify-center md:justify-start text-3xl sm:text-6xl md:text-7xl lg:text-8xl uppercase drop-shadow-md w-full '
-                >Contact Me</motion.h2>
+                >Get In Touch</motion.h2>
 
             </div>
 
@@ -48,7 +48,7 @@ const Contact = () => {
             <ContactImage />
 
 
-            <div className='lg:-mt-52 flex flex-col md:flex-row justify-center items-center h-[70%] w-screen lg:gap-24'>
+            <div className='lg:-mt-52 flex flex-col md:flex-row justify-end pb-10 sm:pb-0 sm:justify-center items-center h-[70%] w-screen lg:gap-24'>
                 <form
                     ref={scope}
                     className=' lg:absolute lg:right-[10%] 2xl:right-[15%] flex flex-col items-center justify-center w-1/2 md:w-1/3 h-2/3  gap-2 sm:gap-4 max-w-[600px]'

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { TechLogoProps } from '@/types/Logo'
 import Tilt from 'react-parallax-tilt'
 
-const TechLogo = ({ src, from }: TechLogoProps) => {
+const TechLogo = ({ src, from, size }: TechLogoProps) => {
     const [scope, animate] = useAnimate()
     const [hovered, setHovered] = useState<boolean>(false)
 
@@ -36,7 +36,7 @@ const TechLogo = ({ src, from }: TechLogoProps) => {
 
                     {from === "techstack" && <span className='floating-text description absolute -left-3 text-transparent bg-clip-text bg-gradient-to-r from-pink to-purple uppercase'>{src[0]}</span>}
                 </div>
-                <Image src={`/images/icons/icon-3d-${src[0]}.png`} width={300} height={300} className='w-[50px] h-[50px]  md:w-[90px] md:h-[90px] z-10 hover:z-[100]' style={{ transform: "translateZ(10px)" }} alt={`${src[0]} logo`} />
+                <Image src={`/images/icons/icon-3d-${src[0]}.png`} width={60} height={60} className={`w-[${size}px] h-[${size}px]  z-10 hover:z-[100]`} style={{ transform: "translateZ(10px)" }} alt={`${src[0]} logo`} />
                 <div className='relative' style={{ transform: "translateZ(30px)" }}>
                     <span className='opacity-0 description absolute -left-10 -top-6 text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-200 text-center text-xs w-[200px] '>{src[1]}</span>
                 </div>
