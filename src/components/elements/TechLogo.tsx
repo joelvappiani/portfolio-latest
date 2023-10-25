@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, MouseEvent } from 'react'
 import { useAnimate } from 'framer-motion'
 import Image from 'next/image'
 import { TechLogoProps } from '@/types/Logo'
-import Tilt from 'react-parallax-tilt'
+
 
 const TechLogo = ({ src, from, size }: TechLogoProps) => {
     const [scope, animate] = useAnimate()
@@ -31,17 +31,14 @@ const TechLogo = ({ src, from, size }: TechLogoProps) => {
 
 
         <div ref={scope} className='tech-logo flex flex-col items-center  2xl:basis-36 z-30' style={from === 'contact' ? { zIndex: 200 } : {}}>
-            <Tilt scale={2} perspective={500} style={{ transformStyle: 'preserve-3d' }} onEnter={() => setHovered(true)} onLeave={() => setHovered(false)}>
+            <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                 <div className='relative form' style={{ transform: "translateZ(30px)" }}>
 
-                    {from === "techstack" && <span className='floating-text description absolute -left-3 text-transparent bg-clip-text bg-gradient-to-r from-pink to-purple uppercase'>{src[0]}</span>}
+                    <span className='floating-text description absolute -left-7 -top-7 text-white bg-gray-800 bg-opacity-50 backdrop-blur-md  px-2 rounded-full text-sm'>{src[0]}</span>
                 </div>
-                <Image src={`/images/icons/icon-3d-${src[0]}.png`} width={60} height={60} className={`w-[${size}px] h-[${size}px]  z-10 hover:z-[100]`} style={{ transform: "translateZ(10px)" }} alt={`${src[0]} logo`} />
-                <div className='relative' style={{ transform: "translateZ(30px)" }}>
-                    <span className='opacity-0 description absolute -left-10 -top-6 text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-200 text-center text-xs w-[200px] '>{src[1]}</span>
-                </div>
-            </Tilt >
-            {/* <span className='font-thin text-xs text-gray-800 hover:drop-shadow-[0_10px_30px_rgba(255,94,0,0.25)]'>{src.slice(0, 1).toUpperCase() + src.slice(1).toLowerCase()}</span> */}
+                <Image src={`/images/icons/icon-3d-${src[0]}.png`} width={200} height={200} style={{ width: 50, height: 50 }} className={`w-[${size}px] h-[${size}px]  z-10 hover:z-[100]`} alt={`${src[0]} logo`} />
+
+            </div >
         </div>
     )
 }

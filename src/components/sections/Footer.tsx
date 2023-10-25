@@ -17,7 +17,7 @@ const Footer = () => {
         >
 
             <div className='flex justify-center  w-full mt-2'>
-                {brandLogos.map((logo: string[], i: number) => <BrandLogo src={logo[0]} desc={logo[1]} link={logo[2]} />)}
+                {brandLogos.map((logo: string[], i: number) => <BrandLogo key={i} src={logo[0]} desc={logo[1]} link={logo[2]} />)}
             </div>
             <span className='text-gray-600 py-2'> djovap.com</span>
 

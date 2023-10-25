@@ -5,20 +5,23 @@ export const allProjects = [
         src: '/images/projects/procap.png',
         desc: 'Vacation rental webapp',
         type: 'pro',
-        platform: 'web'
+        platform: 'web',
+        link: 'https://procap.com'
     },
     {
         name: 'ncicoiffure.com',
         src: '/images/projects/ncicoiffure.png',
         desc: 'Barber shop appointments booking webapp',
         type: 'pro',
-        platform: 'web'
+        platform: 'web',
+        link: 'https://ncicoiffure.com'
     },
     {
         name: "one card",
         src: '/images/projects/onecard.png',
         desc: 'Numeric buisness card mobile app based on QR code',
         type: 'side',
-        platform: 'mobile'
+        platform: 'mobile',
+        link: ''
     }
 ]

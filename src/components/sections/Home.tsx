@@ -44,7 +44,7 @@ const Home = () => {
                 limit: 300,
                 density: {
                     enable: true,
-                    value_area: 800
+                    value_area: 600
                 }
             },
             color: {
@@ -134,7 +134,7 @@ const Home = () => {
                 },
                 bubble: {
                     distance: 100,
-                    size: 100,
+                    size: 200,
                     duration: 2,
                     opacity: 1,
                     speed: 2

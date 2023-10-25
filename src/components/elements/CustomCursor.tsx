@@ -1,8 +1,9 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 const CustomCursor = () => {
+
     const cursorX = useMotionValue(-100)
     const cursorY = useMotionValue(-100)
 
@@ -15,8 +16,11 @@ const CustomCursor = () => {
     const cursorYSpringSmall = useSpring(cursorY, springConfigSmall);
     useEffect(() => {
         const moveCursor = (e: MouseEvent) => {
-            cursorX.set(e.clientX)
-            cursorY.set(e.clientY)
+            if (window.innerWidth > 1000) {
+
+                cursorX.set(e.clientX)
+                cursorY.set(e.clientY)
+            }
         };
 
         window.addEventListener('mousemove', moveCursor)
@@ -41,7 +45,6 @@ const CustomCursor = () => {
                     height: "1px",
                     width: "1px",
                     margin: "",
-
                     pointerEvents: 'none',
                     backgroundColor: "#fff",
                     boxShadow: "0 0 2px 2px #fff, 0 0 15px 9px #f0f,0 0 18px 13px #0ff"

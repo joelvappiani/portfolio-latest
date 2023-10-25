@@ -19,8 +19,12 @@ const Contact = () => {
     const [submitted, setSubmitted] = useState<boolean>(false)
     const [message, setMessage] = useState<string | null>(null)
     const [sent, setSent] = useState<boolean>(false)
+    const [goodToSend, setGoodToSend] = useState<boolean>(false)
     const [scope, animate] = useAnimate()
     const isInView = useInView(scope)
+
+
+
 
     useEffect(() => {
         if (isInView) {
@@ -40,7 +44,7 @@ const Contact = () => {
     async function handleSend() {
         setSubmitted(true)
         if (Object.values(formValue).every((value: string) => value.length)) {
-
+            setGoodToSend(true)
             const serverResponse = await fetch('http://localhost:3000/api/mail', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -52,10 +56,11 @@ const Contact = () => {
                 setSubmitted(false)
                 setFormValue({ name: '', email: '', message: '' })
                 setMessage('Message sent ! ✅')
-
+                setGoodToSend(false)
             } else {
                 setSent(true)
                 setSubmitted(false)
+                setGoodToSend(false)
                 setMessage('❌ Something went wrong, please try again...')
             }
             await new Promise(resolve => setTimeout(resolve, 2000))
@@ -73,6 +78,7 @@ const Contact = () => {
 
         <motion.div
             id='Contact'
+
             initial={{ display: 'none' }}
             animate={{ display: 'flex' }}
             // transition={{ delay: 2.2 }}
@@ -102,21 +108,14 @@ const Contact = () => {
                 >
                     {Object.keys(formValue).map((input: string, i: number) => (
 
-                        <span className='form opacity-0 -translate-y-[10px] max-h-fit'>
+                        <span key={i} className='form opacity-0 -translate-y-[10px] max-h-fit'>
                             <NeuInput id={input} type={input === 'message' ? 'textfield' : 'classic'} placeholder={input} handleInputValue={handleInputValue} submitted={submitted} inputValue={formValue[input as keyof Form]} sent={sent} />
                         </span>
                     ))}
-                    {/* <span className=' form opacity-0 -translate-y-[10px] max-h-fit'>
 
-                        <NeuInput id='email' type='classic' placeholder='✉️ email' handleInputValue={handleInputValue} validationError=''/>
-                    </span>
                     <span className='form opacity-0 -translate-y-[10px] max-h-fit'>
 
-                        <NeuInput id='message' type='textfield' placeholder='🖊️ message' handleInputValue={handleInputValue} validationError=''/>
-                    </span> */}
-                    <span className='form opacity-0 -translate-y-[10px] max-h-fit'>
-
-                        <NeuButton handleSend={handleSend} submitted={submitted} sent={sent} />
+                        <NeuButton handleSend={handleSend} submitted={goodToSend} sent={sent} />
                     </span>
                     <span className='message text-xs text-center opacity-0'>{message}</span>
 
