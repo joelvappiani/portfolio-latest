@@ -20,13 +20,20 @@ publish:
 deploy:
     image: alpine:latest
     stage: deploy
+    before_script:
+        - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
+        - eval $(ssh-agent -s)
+        - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+        - ssh-keyscan $VM_IPADDRESS >> ~/.ssh/known_hosts
+        - chmod 644 ~/.ssh/known_hosts
     script:
-        # - chmod og= $SSH_PRIVATE_KEY
         - apk update && apk add openssh-client
-        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker login -u $SSH_USER -p $PAT $CI_REGISTRY"
-        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker pull $TAG_COMMIT"
-        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker container rm -f portfolio || true"
-        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker run -d -p 9000:3000 --name portfolio $TAG_COMMIT"
+        - ssh $SSH_USER@$SSH_HOST "docker login -u $SSH_USER -p $PAT $CI_REGISTRY"
+        - ssh $SSH_USER@$SSH_HOST "docker pull $TAG_COMMIT"
+        - ssh $SSH_USER@$SSH_HOST "docker container rm -f portfolio || true"
+        - ssh $SSH_USER@$SSH_HOST "docker run -d -p 9000:3000 --name portfolio $TAG_COMMIT"
     environment:
         name: production
         url: http://$SSH_HOST
