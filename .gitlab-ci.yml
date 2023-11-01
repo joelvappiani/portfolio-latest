@@ -20,20 +20,10 @@ publish:
 deploy:
     image: alpine:latest
     stage: deploy
-    before_script:
-        - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client wget gnupg -y )'
-        - wget -qO- https://get.docker.com/gpg | apt-key add -
-        - eval $(ssh-agent -s)
-        - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-        - mkdir -p ~/.ssh
-        - touch ~/.ssh/config
-        - touch ~/.ssh/known_hosts
-        - chmod -R 400 ~/.ssh
-        - ssh-keyscan <ip> >> ~/.ssh/known_hosts
-        - '[[ -f /.dockerinit ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
     script:
-        # - chmod og= $SSH_PRIVATE_KEY
-        # - apk update && apk add openssh-client
+        - chmod og= $SSH_PRIVATE_KEY
+        - apk update && apk add openssh-client
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker login -u $SSH_USER -p $PAT $CI_REGISTRY"
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker pull $TAG_COMMIT"
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker container rm -f portfolio || true"
