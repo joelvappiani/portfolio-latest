@@ -12,8 +12,8 @@ publish:
     services:
         - docker:dind
     script:
+        - docker login -u $SSH_USER -p $PAT $CI_REGISTRY
         - docker build -t $TAG_COMMIT -t $TAG_LATEST .
-        - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
         - docker push $TAG_COMMIT
         - docker push $TAG_LATEST
 
@@ -23,14 +23,14 @@ deploy:
     tags:
         - deployment
     script:
-        - chmod og= $ID_RSA
+        - chmod og= $SSH_PRIVATE_KEY
         - apk update && apk add openssh-client
-        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY"
+        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker login -u $SSH_USER -p $PAT $CI_REGISTRY"
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker pull $TAG_COMMIT"
-        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker container rm -f my-app || true"
-        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker run -d -p 80:80 --name my-app $TAG_COMMIT"
+        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker container rm -f portfolio || true"
+        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker run -d -p 9000:3000 --name portfolio $TAG_COMMIT"
     environment:
         name: production
-        url: http://your_server_IP
+        url: http://$SSH_HOST
     only:
-        - master
+        - main
