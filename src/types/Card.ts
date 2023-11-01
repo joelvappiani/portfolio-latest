@@ -17,6 +17,3 @@ export type ModalProps = {
     handleOpenCloseModal: () => void
 }
 
-export type ProjectsProps = {
-    sticky: boolean;
-}

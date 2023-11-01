@@ -64,3 +64,6 @@ ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
 CMD ["node", "server.js"]
+
+# command to build the docker image : docker build -t portfolio .
+# command to run on port 9000 : docker run -p 9000:3000 portfolio
