@@ -21,7 +21,7 @@ deploy:
     image: alpine:latest
     stage: deploy
     script:
-        - chmod og= $SSH_PRIVATE_KEY
+        # - chmod og= $SSH_PRIVATE_KEY
         - apk update && apk add openssh-client
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker login -u $SSH_USER -p $PAT $CI_REGISTRY"
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker pull $TAG_COMMIT"
