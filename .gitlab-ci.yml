@@ -26,7 +26,7 @@ deploy:
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker login -u $SSH_USER -p $PAT $CI_REGISTRY"
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker pull $TAG_COMMIT"
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker container rm -f portfolio || true"
-        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker run -d --restart always -p 9000:3000 --name portfolio $TAG_COMMIT "
+        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker run -d -p 9000:3000 --name portfolio $TAG_COMMIT "
     environment:
         name: production
         url: http://$SSH_HOST
@@ -41,8 +41,8 @@ deploy:
         - apk update && apk add openssh-client
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker login -u $SSH_USER -p $PAT $CI_REGISTRY"
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker pull $TAG_COMMIT"
-        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker container rm -f portfolio || true"
-        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker run -d -p 9100:3000 --name portfolio:dev $TAG_COMMIT --restart=always"
+        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker container rm -f portfolio:dev || true"
+        - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker run -d -p 9100:3000 --name portfolio:dev $TAG_COMMIT"
     environment:
         name: production
         url: http://$SSH_HOST
