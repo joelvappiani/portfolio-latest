@@ -24,7 +24,7 @@ const Contact = () => {
     const isInView = useInView(scope)
 
 
-
+    const API_ADDRESS = process.env.NODE_ENV === 'production' ? 'https://djovap.com' : 'http://localhost:3000'
 
     useEffect(() => {
         if (isInView) {
@@ -45,7 +45,7 @@ const Contact = () => {
         setSubmitted(true)
         if (Object.values(formValue).every((value: string) => value.length)) {
             setGoodToSend(true)
-            const serverResponse = await fetch('http://localhost:3000/api/mail', {
+            const serverResponse = await fetch(`${API_ADDRESS}/api/mail`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formValue)
