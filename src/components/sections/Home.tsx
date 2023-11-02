@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect, useCallback, useState } from 'react'
 import { useAnimate, stagger } from 'framer-motion'
 import { loadFull } from 'tsparticles';
 import { Engine, IOptions, RecursivePartial, tsParticles, Container } from 'tsparticles-engine';
@@ -13,9 +13,11 @@ import FloatingLogo from '../elements/banner/FloatingLogo';
 
 const Home = () => {
     const [scope, animate] = useAnimate()
-
+    const [windowWidth, setWindowWidth] = useState<number>(1000)
     useEffect(() => {
         animateFloatingLogos()
+        setWindowWidth(window.innerWidth)
+        console.log(window.innerWidth)
     }, [])
 
     async function animateFloatingLogos() {
@@ -32,7 +34,7 @@ const Home = () => {
         await console.log(container);
     }, []);
 
-    // loadFull(tsParticles)
+
     const particlesConfig: RecursivePartial<IOptions> = {
         fullScreen: {
             enable: true,

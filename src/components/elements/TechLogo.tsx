@@ -34,7 +34,7 @@ const TechLogo = ({ src, from, size }: TechLogoProps) => {
             <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                 <div className='relative form' style={{ transform: "translateZ(30px)" }}>
 
-                    <span className='floating-text description absolute -left-7 -top-7 text-white bg-gray-800 bg-opacity-50 backdrop-blur-md  px-2 rounded-full text-sm'>{src[0]}</span>
+                    <span className='floating-text description absolute -left-7 -top-7 text-white bg-gray-800 bg-opacity-50 backdrop-blur-md  px-3 rounded-full text-sm'>{src[0]}</span>
                 </div>
                 <Image src={`/images/icons/icon-3d-${src[0]}.png`} width={200} height={200} style={{ width: 50, height: 50 }} className={`w-[${size}px] h-[${size}px]  z-10 hover:z-[100]`} alt={`${src[0]} logo`} />
 
