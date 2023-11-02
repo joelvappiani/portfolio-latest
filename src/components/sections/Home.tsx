@@ -40,11 +40,11 @@ const Home = () => {
         },
         particles: {
             number: {
-                value: 200,
-                limit: 300,
+                value: 100,
+                limit: 200,
                 density: {
                     enable: true,
-                    value_area: 600
+                    value_area: 100
                 }
             },
             color: {
@@ -87,7 +87,7 @@ const Home = () => {
             },
             line_linked: {
                 enable: true,
-                distance: 150,
+                distance: 100,
                 color: "#ffffff",
                 opacity: 1,
                 width: 1
@@ -133,8 +133,8 @@ const Home = () => {
                     }
                 },
                 bubble: {
-                    distance: 100,
-                    size: 200,
+                    distance: 150,
+                    size: 150,
                     duration: 2,
                     opacity: 1,
                     speed: 2
