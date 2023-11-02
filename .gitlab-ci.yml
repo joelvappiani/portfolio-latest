@@ -21,7 +21,7 @@ publish:
 
 deploy:
     image: alpine:latest
-    stage: deploy
+    stage: staging
     script:
         - chmod og= $SSH_PRIVATE_KEY
         - apk update && apk add openssh-client
@@ -30,7 +30,7 @@ deploy:
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker container rm -f portfolio-staging || true"
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker run -d -p 9100:3000 --name portfolio-staging $TAG_COMMIT "
     environment:
-        name: production
+        name: staging
         url: http://$SSH_HOST
     only:
         - staging
