@@ -30,7 +30,7 @@ deploy:
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker container rm -f portfolio-staging || true"
         - ssh -i $SSH_PRIVATE_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "docker run -d -p 9100:3000 --name portfolio-staging $TAG_COMMIT "
     environment:
-        name: staging
+        name: production
         url: http://$SSH_HOST
     only:
         - staging
