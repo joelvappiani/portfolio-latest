@@ -82,7 +82,7 @@ const Contact = () => {
             initial={{ display: 'none' }}
             animate={{ display: 'flex' }}
             // transition={{ delay: 2.2 }}
-            className='flex flex-col w-screen z-10 h-[calc(100vh-9rem)] bg-gradient-to-b from-gray-100 to-gray-200 font-poppins'
+            className='flex flex-col w-screen z-10 h-[calc(100vh-9rem)] md:h-[860px] bg-gradient-to-b from-gray-100 to-gray-200 font-poppins'
         >
             <div className='w-full flex justify-between mt-28 md:mt-40 md:pl-40'>
 
