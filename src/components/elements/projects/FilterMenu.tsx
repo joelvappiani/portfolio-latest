@@ -30,7 +30,7 @@ const FilterMenu = ({ handleFilter }: FilterProps) => {
             />
             <div className='absolute bottom-16 left-16 flex gap-4 outline outline-1 px-4 py-2 rounded-full'>
                 <button id='all' onClick={(e) => getAndSetWidthAndPosition((e.target as HTMLButtonElement).id)}>All</button>
-                <button id='pro' onClick={(e) => getAndSetWidthAndPosition((e.target as HTMLButtonElement).id)}>Pro Projects</button>
+                <button id='pro' onClick={(e) => getAndSetWidthAndPosition((e.target as HTMLButtonElement).id)}>Client Projects</button>
                 <button id='side' onClick={(e) => getAndSetWidthAndPosition((e.target as HTMLButtonElement).id)}>Side Projects</button>
             </div>
         </div>

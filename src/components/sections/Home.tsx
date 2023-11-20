@@ -14,13 +14,14 @@ import FloatingLogo from '../elements/banner/FloatingLogo';
 const Home = () => {
     const [scope, animate] = useAnimate()
     const [isMobile, setIsMobile] = useState<boolean>(false)
-
+    const [isLow, setIsLow] = useState<boolean>(false)
     useEffect(() => {
         console.log(isMobile)
         window.innerWidth <= 900 && setIsMobile(true)
+        window.innerHeight <= 900 && setIsLow(true)
         animateFloatingLogos()
 
-    }, [])
+    }, [isMobile])
 
     async function animateFloatingLogos() {
         await new Promise(resolve => setTimeout(() => resolve('start floating logos animation'), 4000))
@@ -311,8 +312,8 @@ const Home = () => {
             {isMobile ? <Particles options={smallParticlesConfig} init={particlesInit} loaded={particlesLoaded} />
                 : <Particles options={particlesConfig} init={particlesInit} loaded={particlesLoaded} />}
             <NavBar />
-            <Avatar />
-            <Introducing />
+            <Avatar isLow={isLow} />
+            <Introducing isLow={isLow} />
             <CustomCursor />
             <ul
                 ref={scope}

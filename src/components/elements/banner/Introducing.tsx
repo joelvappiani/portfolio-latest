@@ -1,9 +1,13 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-const Introducing = () => {
+
+type IntroducingProps = {
+    isLow: boolean
+}
+const Introducing = ({ isLow }: IntroducingProps) => {
     return (
-        <div className='absolute bottom-5 right-5 md:right-10 md:bottom-10 lg:bottom-20 lg:right-20 flex flex-col w-full items-end justify-center font-poppins'>
+        <div className={`absolute ${isLow ? "bottom-5 right-5 md:right-5 md:bottom-5" : "bottom-5 right-5 md:right-10 md:bottom-10 lg:bottom-20 lg:right-20"} flex flex-col w-full items-end justify-center font-poppins`}>
 
             <motion.h2
                 initial={{ opacity: 0, x: 80 }}
