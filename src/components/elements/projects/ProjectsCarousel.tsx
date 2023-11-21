@@ -19,7 +19,6 @@ const ProjectsScrollCarousel = ({ filterValue }: CarouselProps) => {
         <div className='absolute top-0 w-11/12 h-screen min-h-[1000px] flex flex-col justify-center'>
 
             <Carousel
-
                 autoplay
                 dragging
                 swiping
