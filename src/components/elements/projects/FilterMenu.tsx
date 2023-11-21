@@ -22,13 +22,13 @@ const FilterMenu = ({ handleFilter }: FilterProps) => {
 
 
     return (
-        <div className='hidden sm:block pointer-events-auto  '>
+        <div className='flex w-full justify-center sm:w-auto sm:block pointer-events-auto  '>
 
             <div
                 ref={scope}
-                className='absolute bg-gradient-to-br from-purple to-blue-600 mb-[6px] h-[28px] bottom-16  -z-10 rounded-full'
+                className='absolute bg-gradient-to-br from-purple to-blue-600 mb-[6px] h-[28px] bottom-10 sm:bottom-16 -z-10 rounded-full'
             />
-            <div className='absolute bottom-16 left-16 flex gap-4 outline outline-1 px-4 py-2 rounded-full'>
+            <div className={'absolute bottom-10 sm:bottom-16 sm:left-16  flex justify-center gap-4 outline outline-1 px-4 py-2 rounded-full'}>
                 <button id='all' onClick={(e) => getAndSetWidthAndPosition((e.target as HTMLButtonElement).id)}>All</button>
                 <button id='pro' onClick={(e) => getAndSetWidthAndPosition((e.target as HTMLButtonElement).id)}>Client Projects</button>
                 <button id='side' onClick={(e) => getAndSetWidthAndPosition((e.target as HTMLButtonElement).id)}>Side Projects</button>

@@ -2028,6 +2028,11 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
 
+nuka-carousel@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-7.0.0.tgz#bcf1d9d1ebf194a589ffecbfd42df269a6219805"
+  integrity sha512-KE0WV1MuE4Gq6ynL8P3qJH2rGq/DkJ0ej+ezo0IuZp4oklV8WNqu6P6O1utJqihHLGoEuFppq5wlHSHfhdCHXA==
+
 object-assign@^4.0.1, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -2277,6 +2282,11 @@ react-hooks-get-dimensions@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-hooks-get-dimensions/-/react-hooks-get-dimensions-1.1.0.tgz#65baf46fefdcfa57d47f33f872f7a9caf19da637"
   integrity sha512-eiP42mwrswTfLsr13PAySDEMKU/t0B0pbgHm0KXeVzF2cN6IMMNJdH/d8atvFOxcERM+rBjAqWCqAVsSKFH6pQ==
+
+react-intersection-observer@^9.5.3:
+  version "9.5.3"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-9.5.3.tgz#f47a31ed3a0359cbbfdb91a53d7470ac2ab7b3c7"
+  integrity sha512-NJzagSdUPS5rPhaLsHXYeJbsvdpbJwL6yCHtMk91hc0ufQ2BnXis+0QQ9NBh6n9n+Q3OyjR6OQLShYbaNBkThQ==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
