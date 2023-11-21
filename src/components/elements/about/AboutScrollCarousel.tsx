@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { motion, useTransform, useScroll } from 'framer-motion'
 import PhotoSection from './PhotoSection';
 import TechStack from './TechStack';
-import Resume from './Resume';
+
 
 const HorizontalScrollCarousel = () => {
     const targetRef = useRef(null);
@@ -18,7 +18,7 @@ const HorizontalScrollCarousel = () => {
                 <motion.div style={{ x }} className="flex gap-[5vw]  ml-[3vw]">
                     <PhotoSection />
                     <TechStack />
-                    <Resume />
+
                 </motion.div>
             </div>
         </section>
