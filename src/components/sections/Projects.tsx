@@ -34,7 +34,7 @@ const Projects = () => {
             initial={{ display: 'none' }}
             animate={{ display: 'flex' }}
             transition={{ delay: 2.2 }}
-            className=' w-screen h-screen min-h-[1000px] font-poppins backdrop-grayscale pointer-events-none flex flex-col'
+            className=' w-screen h-screen md:min-h-[1000px] font-poppins backdrop-grayscale pointer-events-none flex flex-col'
         >
             <h2
 

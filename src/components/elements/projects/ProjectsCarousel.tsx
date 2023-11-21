@@ -16,7 +16,7 @@ const ProjectsScrollCarousel = ({ filterValue }: CarouselProps) => {
     }
     return (
 
-        <div className='absolute top-0 w-11/12 h-screen min-h-[1000px] flex flex-col justify-center'>
+        <div className='absolute top-0 w-11/12 h-screen md:min-h-[1000px] flex flex-col justify-center'>
 
             <Carousel
                 autoplay
