@@ -21,7 +21,7 @@ const ibmPlex = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   title: 'Joël Vappiani - Developer Fullstack JS',
-  description: 'React | Nextjs | Node | Express | Nest | MongoDB ',
+  description: 'React | Nextjs | Node | Express | NestJS | MongoDB ',
 }
 
 export default function RootLayout({

@@ -20,7 +20,7 @@ const ProjectsScrollCarousel = ({ filterValue }: CarouselProps) => {
 
             <Carousel
                 autoplay
-                dragging
+                dragThreshold={0.1}
                 swiping
                 defaultControlsConfig={{
                     nextButtonText: '>',

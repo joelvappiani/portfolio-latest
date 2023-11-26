@@ -5,18 +5,23 @@ import TechLogo from '../TechLogo'
 
 const TechStack = () => {
     const [scope, animate] = useAnimate()
+    const [firstTime, setFirstTime] = useState<boolean>(true)
     const [logoHovered, setLogoHovered] = useState<string | undefined>(undefined)
     const isInView = useInView(scope)
     const logoListFrontend = [['html', "Web content structure language"], ['css', 'Styling language'], ['javascript', 'Web development programming language'], ['react', 'Frontend library'], ['redux', 'Global state management library'], ['nextjs', 'SSR Frontend frameword'], ['typescript', 'Strong typing javascript superset'], ['tailwind', 'Utility-first CSS Framework'], ['framer-motion', 'React animations library'], ['expo', 'Open source mobile development platform']]
     const logoListBackend = [['javascript', 'Web dev programming language'], ['nodejs', 'JS server-side runtime environment'], ['expressjs', 'Backend minimal node.js framework'], ['mongodb', 'NoSQL Database'], ['typescript', 'Strong typing javascript superset'], ['nestjs', 'Progressive Node.js framework for efficient server-side applications'], ['socket.io', 'JS real-time communication library'], ['passportjs', 'Authentication nodejs middleware'], ['jwt', 'Secure authentication & authorization'], ['docker', 'Container platform']]
 
     useEffect(() => {
-        isInView && animateLogos()
+        if (firstTime) {
+
+            isInView && animateLogos()
+        }
     }, [isInView])
 
 
     async function animateLogos() {
-        await animate('.tech-logo', { scale: [0, 0.2, 1], y: [0, -100, 0] }, { delay: stagger(.02), duration: .8 })
+        await animate('.tech-logo', { scale: [0, 1] }, { delay: stagger(.05), duration: .1 })
+        setFirstTime(false)
         // animate(".floating-text", { opacity: [0, 1, 0], x: [-80, 0, 80] }, { duration: 1, delay: stagger(.05), ease: 'linear' })
     }
 
