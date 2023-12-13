@@ -1,13 +1,4 @@
 export const allProjects = [
-
-    {
-        name: 'procap.com',
-        src: '/images/projects/procap.png',
-        desc: 'Vacation rental webapp',
-        type: 'pro',
-        platform: 'web',
-        link: 'https://procap.com'
-    },
     {
         name: 'ncicoiffure.com',
         src: '/images/projects/ncicoiffure.png',
