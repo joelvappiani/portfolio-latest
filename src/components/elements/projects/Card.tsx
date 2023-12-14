@@ -78,7 +78,7 @@ const Card = ({ name, src, desc, type, platform, link }: CardProps): JSX.Element
 
                 </motion.div>
             </div>
-            {/* <VideoModal isOpen={isModalOpen} toggleModal={toggleModal} src={link} /> */}
+            <VideoModal isOpen={isModalOpen} toggleModal={toggleModal} src={link} />
         </motion.div >
 
     )
