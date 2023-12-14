@@ -22,7 +22,6 @@ const TechStack = (): JSX.Element => {
     async function animateLogos() {
         await animate('.tech-logo', { scale: [0, 1] }, { delay: stagger(.05), duration: .1 })
         setFirstTime(false)
-        // animate(".floating-text", { opacity: [0, 1, 0], x: [-80, 0, 80] }, { duration: 1, delay: stagger(.05), ease: 'linear' })
     }
 
 

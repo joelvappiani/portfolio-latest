@@ -35,7 +35,7 @@ const FloatingLogo = ({ src }: BannerLogoProps): JSX.Element => {
             }}
 
         >
-            <Image src={`/images/icons/icon-3d-${src}.png`} width={100} height={50} className="w-6 sm:w-8" alt='floating tech logo' />
+            <Image src={`/images/icons/icon-3d-${src}.png`} width={50} height={50} className="w-6 sm:w-8" alt='floating tech logo' />
         </motion.div>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, MouseEvent } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAnimate } from 'framer-motion'
 import Image from 'next/image'
 import { TechLogoProps } from '@/types/Logo'
@@ -36,7 +36,7 @@ const TechLogo = ({ src, from, size }: TechLogoProps): JSX.Element => {
 
                     <span className='floating-text description absolute -left-7 -top-7 text-white bg-gray-800 bg-opacity-50 backdrop-blur-md  px-3 rounded-full text-sm'>{src[0]}</span>
                 </div>
-                <Image src={`/images/icons/icon-3d-${src[0]}.png`} width={200} height={200} style={{ width: 50, height: 50 }} className={`w-[${size}px] h-[${size}px]  z-10 hover:z-[100]`} alt={`${src[0]} logo`} />
+                <Image src={`/images/icons/icon-3d-${src[0]}.png`} width={100} height={100} style={{ width: 50, height: 50 }} className={`w-[${size}px] h-[${size}px]  z-10 hover:z-[100]`} alt={`${src[0]} logo`} />
 
             </div >
         </div>

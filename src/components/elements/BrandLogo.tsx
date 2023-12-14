@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useAnimate } from 'framer-motion'
 import Image from 'next/image'
 import { BrandLogoProps } from '@/types/Logo'
-import Tilt from 'react-parallax-tilt'
+
 
 const BrandLogo = ({ src, desc, link }: BrandLogoProps): JSX.Element => {
     const [scope, animate] = useAnimate()
