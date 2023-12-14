@@ -54,6 +54,7 @@ const About = () => {
                 <TechStack />
                 <AnimatedPicture />
             </div>
+
             <div ref={ref} className=' my-40 w-11/12 lg:w-2/3 min-h-[40vh] bg-opacity-10 backdrop-blur-lg bg-gray-800 p-8 rounded-2xl flex flex-col items-start gap-6 text-lg lg:text-2xl' >
 
 

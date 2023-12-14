@@ -148,6 +148,33 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
+"@cloudinary-util/url-loader@^3.22.0":
+  version "3.22.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-3.22.0.tgz#9eaa5cf1d2544e21503da34a1cfb417d00a1bd20"
+  integrity sha512-8HElCEMsGk1xHvrXY5D2takyKP4yORo9YnU1EGr601T146Tbz/9jotM1YzTP8GcrNfFtt0eEEny/zrRfmhVlHQ==
+  dependencies:
+    "@cloudinary-util/util" "2.3.0"
+    "@cloudinary/url-gen" "^1.10.2"
+
+"@cloudinary-util/util@2.3.0", "@cloudinary-util/util@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-2.3.0.tgz#8a2a7ad3d3f089c2fff08f53eaddd50e946048f1"
+  integrity sha512-0Gojd+ZRQjJQmlBEAa8Ua94amvx7uWHoUzVUEGi1S8bgF1wPcMqG07cSUGQfRwHsFQ/9XOesx76Df622E+CevA==
+
+"@cloudinary/transformation-builder-sdk@^1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.9.0.tgz#0c6d37f3c4fd071d8205ca800d70bd8882a00512"
+  integrity sha512-19ZV3r2dE2mYMZTN/ytP7p7hmqiD7PC6EoWdQwJByabN4JXtNwgotElHYC509/eD7j5xJajghgHiIXTonrgMhQ==
+  dependencies:
+    "@cloudinary/url-gen" "^1.7.0"
+
+"@cloudinary/url-gen@^1.10.2", "@cloudinary/url-gen@^1.7.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary/url-gen/-/url-gen-1.14.0.tgz#87a31719858acd98b482ca331a0df2d5a8791f34"
+  integrity sha512-XbG8QgD5fkTUO/YYUWftfz3sUpKzRZJkXhp6xLSxmK/36iyMy2wA4SF5FLCOnv6fLLUneQzXbc4OAwaDM0EWCQ==
+  dependencies:
+    "@cloudinary/transformation-builder-sdk" "^1.9.0"
+
 "@emotion/is-prop-valid@^0.8.2":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
@@ -246,6 +273,13 @@
   integrity sha512-uHg75Rb/XORTtVt7OS9WoK8uM276Ufi7gCzshVWkUJbHhh3svsUUeqXerrM96Wm7fRiDzfKRwSoahhMIkGAYHw==
   dependencies:
     prop-types "^15.8.1"
+
+"@headlessui/react@^1.7.17":
+  version "1.7.17"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.7.17.tgz#a0ec23af21b527c030967245fd99776aa7352bc6"
+  integrity sha512-4am+tzvkqDSSgiwrsEpGWqgGo9dz8qU5M3znCkC4PgkpY4HcCZzEDEvozltGGGHIKl9jbXbZPSH5TWn4sWJdow==
+  dependencies:
+    client-only "^0.0.1"
 
 "@humanwhocodes/config-array@^0.11.11":
   version "0.11.11"
@@ -795,7 +829,7 @@ chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
-client-only@0.0.1:
+client-only@0.0.1, client-only@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
   integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
@@ -1984,6 +2018,14 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
+
+next-cloudinary@^5.13.0:
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/next-cloudinary/-/next-cloudinary-5.13.0.tgz#4c4fcd29aa313d71d106569b46021b439c86925b"
+  integrity sha512-977Tbgiys+VyLbNKn2in+xvCuFHCzzsriWIZspKhWuKn3/LrrhJrj1mspfu2kzXjpObbxcqAsao6clWHP0uNQQ==
+  dependencies:
+    "@cloudinary-util/url-loader" "^3.22.0"
+    "@cloudinary-util/util" "^2.3.0"
 
 next@13.5.4:
   version "13.5.4"

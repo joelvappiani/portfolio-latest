@@ -1,13 +1,54 @@
 'use client'
-import { ModalProps } from '@/types/Card'
-import React from 'react'
-
-const VideoModal = ({ isOpen, src, handleOpenCloseModal }: ModalProps) => {
-
-
+import { Fragment, useRef } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
+type Props = {
+    isOpen: boolean
+    toggleModal: (bool: boolean) => void
+    src: string
+}
+export default function VideoModal({ isOpen, toggleModal, src }: Props) {
+    const videoRef = useRef<HTMLVideoElement | null>(null)
     return (
-        <div className={`hidden fixed top-0 left-0 right-0 bottom-0 w-screen h-screen bg-white bg-opacity-20 z-50`}>VideoModal</div>
+        <div>
+
+            <Transition show={isOpen} as={Fragment} afterEnter={() => videoRef.current?.play()}>
+                <Dialog onClose={() => toggleModal(false)} initialFocus={videoRef}>
+
+                    {/* 2. The backdrop layer */}
+                    <Transition.Child
+                        className="fixed inset-0 z-[99999] bg-black bg-opacity-50 transition-opacity"
+                        enter="transition ease-out duration-200"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="transition ease-out duration-100"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                        aria-hidden="true"
+                    />
+
+                    {/* 3. The modal video */}
+                    <Transition.Child
+                        className="fixed inset-0 z-[99999] flex p-6"
+                        enter="transition ease-out duration-300"
+                        enterFrom="opacity-0 scale-75"
+                        enterTo="opacity-100 scale-100"
+                        leave="transition ease-out duration-200"
+                        leaveFrom="opacity-100 scale-100"
+                        leaveTo="opacity-0 scale-75"
+                    >
+                        <div className="max-w-5xl mx-auto h-full flex items-center">
+                            <Dialog.Panel className="w-full max-h-full rounded-3xl shadow-2xl aspect-video bg-black overflow-hidden">
+                                <video ref={videoRef} width="1920" height="1080" loop controls >
+                                    <source src={src} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </Dialog.Panel>
+                        </div>
+                    </Transition.Child>
+
+                </Dialog>
+            </Transition>
+
+        </div>
     )
 }
-
-export default VideoModal

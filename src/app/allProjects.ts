@@ -5,7 +5,7 @@ export const allProjects = [
         desc: 'Barber shop appointments booking webapp',
         type: 'pro',
         platform: 'web',
-        link: 'https://ncicoiffure.com'
+        link: "https://res.cloudinary.com/donexpiib/video/upload/v1702553187/ncicoiffure_iqoyfu.mp4"
     },
     {
         name: "one card",
@@ -13,6 +13,6 @@ export const allProjects = [
         desc: 'Numeric buisness card mobile app based on QR code',
         type: 'side',
         platform: 'mobile',
-        link: ''
+        link: 'https://res.cloudinary.com/donexpiib/video/upload/v1702479265/onecard.mp4'
     }
 ]
