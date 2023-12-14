@@ -28,8 +28,6 @@ const TechLogo = ({ src, from, size }: TechLogoProps): JSX.Element => {
     }
 
     return (
-
-
         <div ref={scope} className='tech-logo flex flex-col items-center  2xl:basis-36 z-30' style={from === 'contact' ? { zIndex: 200 } : {}}>
             <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                 <div className='relative form' style={{ transform: "translateZ(30px)" }}>
