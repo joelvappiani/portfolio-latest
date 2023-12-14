@@ -15,7 +15,7 @@ const About = (): JSX.Element => {
         "Fullstack developer for web & mobile since 2022.",
         "Javascript bootcamp teacher",
         "Specialized in web development",
-        "In React - Nextjs | Node - Express | mongoDB architectures.",
+        "In React | Nextjs | Node.js | Express | mongoDB architectures.",
         "Take a look at my work and don't hesitate to contact me ! "
     ]
 
