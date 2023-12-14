@@ -14,7 +14,7 @@ export default function VideoModal({ isOpen, toggleModal, src }: Props) {
             <Transition show={isOpen} as={Fragment} afterEnter={() => videoRef.current?.play()}>
                 <Dialog onClose={() => toggleModal(false)} initialFocus={videoRef}>
 
-                    {/* 2. The backdrop layer */}
+
                     <Transition.Child
                         className="fixed inset-0 z-[99999] bg-black bg-opacity-50 transition-opacity"
                         enter="transition ease-out duration-200"
@@ -26,7 +26,7 @@ export default function VideoModal({ isOpen, toggleModal, src }: Props) {
                         aria-hidden="true"
                     />
 
-                    {/* 3. The modal video */}
+
                     <Transition.Child
                         className="fixed inset-0 z-[99999] flex p-6"
                         enter="transition ease-out duration-300"
