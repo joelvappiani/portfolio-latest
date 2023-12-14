@@ -12,10 +12,10 @@ const About = (): JSX.Element => {
     const isInView = useInView(ref)
     const textArr = [
         "Hi ! I'm Joel,",
-        "Fullstack developer since 2021.",
+        "Fullstack developer for web & mobile since 2022.",
         "Javascript bootcamp teacher",
         "Specialized in web development",
-        "In nextjs | nestjs | mongoDB architectures.",
+        "In React - Nextjs | Node - Express | mongoDB architectures.",
         "Take a look at my work and don't hesitate to contact me ! "
     ]
 

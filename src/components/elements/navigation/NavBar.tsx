@@ -1,5 +1,5 @@
 "use client"
-import style from '../../../styles/navbar.module.css'
+
 import React, { useState, useEffect } from 'react'
 import { motion, useAnimate, stagger } from 'framer-motion'
 import Title from '../banner/Title'
