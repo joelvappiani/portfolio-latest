@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useAnimate, useInView } from 'framer-motion'
 import Image from 'next/image'
-const ContactImage = () => {
+
+const ContactImage = (): JSX.Element => {
     const [scope, animate] = useAnimate()
     const isInView = useInView(scope)
     useEffect(() => {

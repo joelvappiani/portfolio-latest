@@ -3,8 +3,7 @@ import React, { useEffect } from 'react'
 import { motion, useAnimate, stagger } from 'framer-motion'
 import { DrawerProps } from '@/types/Drawer'
 
-
-const DrawerMenu = ({ isVisible, changeVisible }: DrawerProps) => {
+const DrawerMenu = ({ isVisible, changeVisible }: DrawerProps): JSX.Element => {
     const items = ["Home", "About", "Projects", "Contact"]
     const [scope, animate] = useAnimate()
 

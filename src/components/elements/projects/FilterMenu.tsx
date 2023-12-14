@@ -2,7 +2,7 @@ import { FilterProps } from '@/types/Card'
 import React, { useState, useEffect } from 'react'
 import { useAnimate } from 'framer-motion'
 
-const FilterMenu = ({ handleFilter }: FilterProps) => {
+const FilterMenu = ({ handleFilter }: FilterProps): JSX.Element => {
     const [scope, animate] = useAnimate()
 
 

@@ -6,7 +6,7 @@ import Title from '../banner/Title'
 import Hamburger from 'hamburger-react'
 import DrawerMenu from './DrawerMenu'
 
-const NavBar = () => {
+const NavBar = (): JSX.Element => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [scope, animate] = useAnimate()
     const items = ["Home", "About", "Projects", "Contact"]
@@ -30,6 +30,7 @@ const NavBar = () => {
             inline: 'start'
         });
     }
+
     return (
         <nav className='fixed z-40 top-0 left-0 w-screen flex justify-between items-center font-poppins font-bold text-xl py-10 px-10 pointer-events-auto'>
 

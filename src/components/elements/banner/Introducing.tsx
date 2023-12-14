@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 type IntroducingProps = {
     isLow: boolean
 }
-const Introducing = ({ isLow }: IntroducingProps) => {
+const Introducing = ({ isLow }: IntroducingProps): JSX.Element => {
     return (
         <div className={`absolute ${isLow ? "bottom-5 right-5 md:right-5 md:bottom-5" : "bottom-5 right-5 md:right-10 md:bottom-10 lg:bottom-20 lg:right-20"} flex flex-col w-full items-end justify-center font-poppins`}>
 

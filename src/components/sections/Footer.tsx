@@ -1,11 +1,9 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import TechLogo from '../elements/TechLogo'
 import BrandLogo from '../elements/BrandLogo'
-const Footer = () => {
+
+const Footer = (): JSX.Element => {
 
     const brandLogos = [['linkedin', 'Contact me', 'https://linkedin.com/in/joël-vappiani-642840246'], ['github', 'Take a look', 'https://github.com/joelvappiani']]
     return (

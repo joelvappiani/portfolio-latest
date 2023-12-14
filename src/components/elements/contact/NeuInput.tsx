@@ -2,7 +2,8 @@
 import { motion } from 'framer-motion'
 import React, { useState, useEffect, ChangeEvent } from 'react'
 import { NeuInputProps } from '@/types/Inputs'
-const NeuInput = ({ id, type, placeholder, handleInputValue, inputValue, submitted, sent }: NeuInputProps) => {
+
+const NeuInput = ({ id, type, placeholder, handleInputValue, inputValue, submitted, sent }: NeuInputProps): JSX.Element => {
 
     const [validationMessage, setValidationMessage] = useState<string>('')
     useEffect(() => {

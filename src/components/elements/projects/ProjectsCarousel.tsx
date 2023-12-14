@@ -8,7 +8,7 @@ import Carousel from 'nuka-carousel'
 type CarouselProps = {
     filterValue: string;
 }
-const ProjectsScrollCarousel = ({ filterValue }: CarouselProps) => {
+const ProjectsScrollCarousel = ({ filterValue }: CarouselProps): JSX.Element => {
 
     const filterByType = (filterValue: string, listToFilter: CardProps[]): CardProps[] => {
         if (filterValue === 'all') return listToFilter

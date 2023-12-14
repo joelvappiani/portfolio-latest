@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useAnimate } from 'framer-motion'
 import { TitleProps } from '@/types/Title'
 
-const Title = ({ size, delay }: TitleProps) => {
+const Title = ({ size, delay }: TitleProps): JSX.Element => {
     const [scope, animate] = useAnimate()
     useEffect(() => {
         letterAnimation()

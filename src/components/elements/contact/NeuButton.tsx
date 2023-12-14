@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { Button } from '@/types/Inputs';
 import { TailSpin } from 'react-loader-spinner'
-const NeuButton = ({ handleSend, submitted, sent }: Button) => {
+
+const NeuButton = ({ handleSend, submitted }: Button): JSX.Element => {
 
     return (
         <motion.div

@@ -6,7 +6,7 @@ type Props = {
     toggleModal: (bool: boolean) => void
     src: string
 }
-export default function VideoModal({ isOpen, toggleModal, src }: Props) {
+export default function VideoModal({ isOpen, toggleModal, src }: Props): JSX.Element {
     const videoRef = useRef<HTMLVideoElement | null>(null)
     return (
         <div>

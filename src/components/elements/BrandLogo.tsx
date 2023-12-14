@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { BrandLogoProps } from '@/types/Logo'
 import Tilt from 'react-parallax-tilt'
 
-const BrandLogo = ({ src, desc, link }: BrandLogoProps) => {
+const BrandLogo = ({ src, desc, link }: BrandLogoProps): JSX.Element => {
     const [scope, animate] = useAnimate()
     const [hovered, setHovered] = useState<boolean>(false)
 

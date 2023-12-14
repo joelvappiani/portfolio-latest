@@ -1,11 +1,11 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
-import { motion, useAnimate, useInView, stagger } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import AnimatedPicture from '../elements/AnimatedPicture'
 import { TypeAnimation } from 'react-type-animation'
 import TechStack from '../elements/about/TechStack'
 
-const About = () => {
+const About = (): JSX.Element => {
     const [typingText, setTypingText] = useState<string[]>([])
     const [firstTime, setFirstTime] = useState<boolean>(true)
     const ref = useRef<HTMLDivElement | null>(null)

@@ -2,7 +2,7 @@
 import React, { useEffect, useCallback, useState } from 'react'
 import { useAnimate, stagger } from 'framer-motion'
 import { loadFull } from 'tsparticles';
-import { Engine, IOptions, RecursivePartial, tsParticles, Container } from 'tsparticles-engine';
+import { Engine, IOptions, RecursivePartial, Container } from 'tsparticles-engine';
 import Particles from 'react-tsparticles'
 import NavBar from '../elements/navigation/NavBar';
 import Avatar from '../elements/banner/Avatar';
@@ -11,7 +11,7 @@ import CustomCursor from '../elements/CustomCursor'
 import FloatingLogo from '../elements/banner/FloatingLogo';
 
 
-const Home = () => {
+const Home = (): JSX.Element => {
     const [scope, animate] = useAnimate()
     const [isMobile, setIsMobile] = useState<boolean>(false)
     const [isLow, setIsLow] = useState<boolean>(false)

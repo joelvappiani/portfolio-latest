@@ -1,15 +1,12 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 
-const CustomCursor = () => {
+const CustomCursor = (): JSX.Element => {
 
     const cursorX = useMotionValue(-100)
     const cursorY = useMotionValue(-100)
 
-    // const springConfigBig = { damping: 7, stiffness: 200, mass: 1, };
-    // const cursorXSpringBig = useSpring(cursorX, springConfigBig);
-    // const cursorYSpringBig = useSpring(cursorY, springConfigBig);
 
     const springConfigSmall = { damping: 6, stiffness: 200, mass: 0.8 }
     const cursorXSpringSmall = useSpring(cursorX, springConfigSmall);

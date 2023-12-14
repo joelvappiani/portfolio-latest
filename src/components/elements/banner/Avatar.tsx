@@ -5,7 +5,7 @@ import { useAnimate } from 'framer-motion'
 type AvatarProps = {
     isLow: boolean;
 }
-const Avatar = ({ isLow }: AvatarProps) => {
+const Avatar = ({ isLow }: AvatarProps): JSX.Element => {
     const [scope, animate] = useAnimate()
 
     useEffect(() => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Tilt from 'react-parallax-tilt'
 
-const AnimatedPicture = () => {
+const AnimatedPicture = (): JSX.Element => {
     return (
         <Tilt glareBorderRadius='20px' glareEnable glareColor='#fff' perspective={3000} scale={1.1} gyroscope={true} className='w-[130px] h-[230px] md:w-[230px] md:h-[330px] xl:w-[330px] xl:h-[430px]' style={{ transformStyle: 'preserve-3d' }} >
             <div className='bg-[url(/images/photo-jojo.jpg)] bg-cover bg-no-repeat w-[130px] h-[230px] md:w-[230px] md:h-[330px] xl:w-[330px] xl:h-[430px] rounded-[20px] ' style={{ transformStyle: 'preserve-3d' }}>

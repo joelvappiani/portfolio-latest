@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { TechLogoProps } from '@/types/Logo'
 
 
-const TechLogo = ({ src, from, size }: TechLogoProps) => {
+const TechLogo = ({ src, from, size }: TechLogoProps): JSX.Element => {
     const [scope, animate] = useAnimate()
     const [hovered, setHovered] = useState<boolean>(false)
 

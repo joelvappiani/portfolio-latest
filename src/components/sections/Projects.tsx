@@ -4,9 +4,7 @@ import { motion, useInView, useAnimate } from 'framer-motion'
 import ProjectsCarousel from '../elements/projects/ProjectsCarousel'
 import FilterMenu from '../elements/projects/FilterMenu'
 
-//import 'next-cloudinary/dist/cld-video-player.css';
-
-const Projects = () => {
+const Projects = (): JSX.Element => {
     const [filterValue, setFilterValue] = useState<string>('all')
     const [scope, animate] = useAnimate()
     const ref = useRef<HTMLDivElement | null>(null)

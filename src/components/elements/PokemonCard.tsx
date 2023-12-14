@@ -1,9 +1,11 @@
+//Component not used
+
+
 "use client"
+
 import React, { useState, useCallback, MouseEvent } from 'react'
 
-
-
-const TechLogo = () => {
+const TechLogo = (): JSX.Element => {
     const [hovered, setHovered] = useState<boolean>(false)
     const [rotate, setRotate] = useState({ x: 0, y: 0 });
 

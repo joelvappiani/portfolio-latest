@@ -3,7 +3,7 @@ import { useAnimate, useInView, stagger } from 'framer-motion'
 import { motion } from 'framer-motion'
 import TechLogo from '../TechLogo'
 
-const TechStack = () => {
+const TechStack = (): JSX.Element => {
     const [scope, animate] = useAnimate()
     const [firstTime, setFirstTime] = useState<boolean>(true)
     const [logoHovered, setLogoHovered] = useState<string | undefined>(undefined)

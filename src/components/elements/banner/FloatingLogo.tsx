@@ -3,11 +3,8 @@ import React, { useEffect } from 'react'
 import { motion, useSpring, useMotionValue } from 'framer-motion'
 import Image from 'next/image'
 import { BannerLogoProps } from '@/types/Logo'
-const FloatingLogo = ({ src }: BannerLogoProps) => {
+const FloatingLogo = ({ src }: BannerLogoProps): JSX.Element => {
 
-    const dimentions = { width: "1000px", height: "1000px" }
-    const { width, height } = dimentions
-    //const [position, setPosition] = useState({ x: 150, y: 150 })
     const x = useMotionValue(500)
     const y = useMotionValue(500)
 
@@ -15,9 +12,6 @@ const FloatingLogo = ({ src }: BannerLogoProps) => {
     const xSpring = useSpring(x, springConfig);
     const ySpring = useSpring(y, springConfig);
 
-    // const springConfig = { damping: 6, stiffness: 100, mass: 1.4 }
-    // const xSpring = useSpring(x, springConfig);
-    // const ySpring = useSpring(y, springConfig);
     useEffect(() => {
         let interval = setInterval(() => {
             x.set(Math.random() * 400)

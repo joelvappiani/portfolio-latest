@@ -6,10 +6,7 @@ import NeuButton from '../elements/contact/NeuButton';
 import ContactImage from '../elements/contact/ContactImage';
 import { Form } from '@/types/Inputs';
 
-
-
-
-const Contact = () => {
+const Contact = (): JSX.Element => {
     const [formValue, setFormValue] = useState<Form>({
         name: '',
         email: '',
